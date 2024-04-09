@@ -13,7 +13,8 @@ namespace Tabel.Model
         public DbSet<Employee> Employees { get; set; } = null!;
         public DbSet<Division> Divisions { get; set; } = null!;
         public DbSet<DayType> DayTypes { get; set; } = null!;
-       
+        public DbSet<EmployeeTabel> EmployeeTabels { get; set; } = null!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=Tabel.db");

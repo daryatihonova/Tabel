@@ -33,6 +33,8 @@
         <Label Grid.Row="1" Content="Дата:"/>
         <DatePicker x:Name="datePicker" Grid.Row="1" Margin="120,0,1015,20" Grid.RowSpan="2"/>
         <Button Content="Export to Excel" HorizontalAlignment="Left" VerticalAlignment="Center" Width="132" Click="ExportToExcel_Click" Height="35" Margin="1152,0,0,0"/>
+        <Button Content="Сохранить данные в базу данных" Click="SaveDataToDatabase_Click" Margin="960,-3,252,3" />
+
         <!-- Поле для ввода номера табеля -->
         <Label  Width="200" Grid.Row="1" Content="Номер табеля:"/>
         <TextBox x:Name="txtTimesheetNumber" Grid.Row="1" Margin="797,1,353,2" Width="200"/>
@@ -48,7 +50,7 @@
                 <DataGridTemplateColumn Header="1" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown" />
+                            <TextBox x:Name="textBoxData1" Text="{Binding Data1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -56,7 +58,7 @@
                 <DataGridTemplateColumn Header="2" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData2" Text="{Binding Data2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -64,7 +66,7 @@
                 <DataGridTemplateColumn Header="3" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData3" Text="{Binding Data3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -72,7 +74,7 @@
                 <DataGridTemplateColumn Header="4" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData4" Text="{Binding Data4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -80,7 +82,7 @@
                 <DataGridTemplateColumn Header="5" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData5" Text="{Binding Data5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -88,7 +90,7 @@
                 <DataGridTemplateColumn Header="6" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData6" Text="{Binding Data6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -96,7 +98,7 @@
                 <DataGridTemplateColumn Header="7" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData7" Text="{Binding Data7, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -104,7 +106,7 @@
                 <DataGridTemplateColumn Header="8" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData8" Text="{Binding Data8, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -112,7 +114,7 @@
                 <DataGridTemplateColumn Header="9" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData9" Text="{Binding Data9, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -120,7 +122,7 @@
                 <DataGridTemplateColumn Header="10" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData10" Text="{Binding Data10, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -128,7 +130,7 @@
                 <DataGridTemplateColumn Header="11" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData11" Text="{Binding Data11, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -136,7 +138,7 @@
                 <DataGridTemplateColumn Header="12" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData12" Text="{Binding Data12, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -144,7 +146,7 @@
                 <DataGridTemplateColumn Header="13" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData13" Text="{Binding Data13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -152,7 +154,7 @@
                 <DataGridTemplateColumn Header="14" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData14" Text="{Binding Data14, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -160,7 +162,7 @@
                 <DataGridTemplateColumn Header="15" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData15" Text="{Binding Data15, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -168,7 +170,7 @@
                 <DataGridTemplateColumn Header="16" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData16" Text="{Binding Data16, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -176,7 +178,7 @@
                 <DataGridTemplateColumn Header="17" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData17" Text="{Binding Data17, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -184,7 +186,7 @@
                 <DataGridTemplateColumn Header="18" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData18" Text="{Binding Data18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -192,7 +194,7 @@
                 <DataGridTemplateColumn Header="19" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData19" Text="{Binding Data19, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -200,7 +202,7 @@
                 <DataGridTemplateColumn Header="20" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData20" Text="{Binding Data20, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -208,7 +210,7 @@
                 <DataGridTemplateColumn Header="21" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData21" Text="{Binding Data21, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -216,7 +218,7 @@
                 <DataGridTemplateColumn Header="22" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData22" Text="{Binding Data22, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -224,7 +226,7 @@
                 <DataGridTemplateColumn Header="23" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData23" Text="{Binding Data23, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -232,7 +234,7 @@
                 <DataGridTemplateColumn Header="24" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData24" Text="{Binding Data24, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -240,7 +242,7 @@
                 <DataGridTemplateColumn Header="25" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData25" Text="{Binding Data25, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -248,7 +250,7 @@
                 <DataGridTemplateColumn Header="26" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData26" Text="{Binding Data26, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -256,7 +258,7 @@
                 <DataGridTemplateColumn Header="27" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData27" Text="{Binding Data27, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -264,7 +266,7 @@
                 <DataGridTemplateColumn Header="28" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData28" Text="{Binding Data28, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -272,7 +274,7 @@
                 <DataGridTemplateColumn Header="29" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData29" Text="{Binding Data29, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -280,7 +282,7 @@
                 <DataGridTemplateColumn Header="30" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData30" Text="{Binding Data30, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -288,7 +290,7 @@
                 <DataGridTemplateColumn Header="31" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Day1Hours, UpdateSourceTrigger=PropertyChanged}" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                            <TextBox x:Name="textBoxData31" Text="{Binding Data31, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
