@@ -1,0 +1,60 @@
+﻿<Window x:Class="Tabel.View.WindowNewOrganization1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tabel.View"
+        mc:Ignorable="d"
+        Title="WindowNewOrganization1" Height="800" Width="500">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="MinWidth" Value="60" />
+            <Setter Property="Margin" Value="8" />
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FAEBD7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="30*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Номер организации" Margin="8,8,8,8" />
+        <TextBlock Text="Название" Grid.Row="1" Margin="8,8,8,8" />
+        <TextBlock Text="Руководитель" Grid.Row="2" Margin="8,8,8,8" />
+        <TextBlock Text="Город" Grid.Row="3" Margin="8,8,8,8" />
+        <TextBlock Text="Улица" Grid.Row="4" Margin="8,8,8,8" />
+        <TextBlock Text="Строение" Grid.Row="5" Margin="8,8,8,8" />
+        <TextBlock Text="Номер офиса" Grid.Row="6" Margin="8,8,8,8" />
+        <TextBlock Text="Электронная почта" Grid.Row="7" Margin="8,8,8,8" />
+
+        <TextBox Text="{Binding OrganizationID}" Grid.Column="1" Margin="8,8,34,28" />
+        <TextBox Text="{Binding NameOrganization}" Grid.Column="1" Grid.Row="1" Margin="8,8,34,28" />
+        <TextBox Text="{Binding Managment}" Grid.Column="1" Grid.Row="2" Margin="8,8,34,28" />
+        <TextBox Text="{Binding City}" Grid.Column="1" Grid.Row="3" Margin="8,8,34,28" />
+        <TextBox Text="{Binding Street}" Grid.Column="1" Grid.Row="4" Margin="8,8,34,28" />
+        <TextBox Text="{Binding House}" Grid.Column="1" Grid.Row="5" Margin="8,8,34,28" />
+        <TextBox Text="{Binding Office}" Grid.Column="1" Grid.Row="6" Margin="8,8,34,28" />
+        <TextBox Text="{Binding Email}" Grid.Column="1" Grid.Row="7" Margin="8,8,34,28" />
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="8" Grid.Column="1" Width="162">
+            <Button IsDefault="True" Click="Accept_Click" Height="24" Width="65" >OK</Button>
+            <Button IsCancel="True" Height="25" Width="66" >Отмена</Button>
+        </StackPanel>
+    </Grid>
+</Window>
