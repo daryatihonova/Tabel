@@ -364,7 +364,7 @@ namespace Tabel.View
                    worksheet.Cell("B2").SetValue($"Организация: {organizationName}");
                     worksheet.Cell("AH6").SetValue($"Итого дней");
                     worksheet.Cell("AI6").SetValue($"Итого отработано часов");
-                    worksheet.Cell("B10").SetValue($"Ответственное лицо");
+                    worksheet.Cell("B15").SetValue($"Ответственное лицо");
 
 
                     // Заголовки столбцов
@@ -381,7 +381,7 @@ namespace Tabel.View
                     foreach (var emp in employees)
                     {
                         worksheet.Cell(row, 1).Value = emp.Id;
-                        worksheet.Column(1).Width = 4;
+                        worksheet.Column(1).Width = 5;
                         worksheet.Cell(row, 2).Value = emp.FullName;
                         worksheet.Column(2).Width = 25;
                         for (int i = 3; i <= 33; i++)
