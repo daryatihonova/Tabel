@@ -100,194 +100,7 @@ namespace Tabel.View
         }
 
 
-
-        //private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.V && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control) // Ctrl+V
-        //    {
-        //        string textToPaste = Clipboard.GetText();
-        //        System.Windows.Controls.TextBox textBox = sender as System.Windows.Controls.TextBox;
-        //        if (!string.IsNullOrEmpty(textToPaste) && textBox != null)
-        //        {
-        //            foreach (var item in dataGridEmployees.SelectedCells)
-        //            {
-        //                if (item.Item is Employee employee && item.Column is DataGridColumn column)
-        //                {
-        //                    string columnName = column.Header.ToString();
-        //                    PropertyInfo propertyInfo = employee.GetType().GetProperty(columnName);
-        //                    if (propertyInfo != null)
-        //                    {
-        //                        propertyInfo.SetValue(employee, textToPaste);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-
-        //private void ExportToExcel_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
-        //    excelApp.Visible = true;
-        //    Microsoft.Office.Interop.Excel.Workbook workbook = excelApp.Workbooks.Add();
-        //    Microsoft.Office.Interop.Excel.Worksheet worksheet = workbook.Sheets[1];
-
-        //    // Export data from TextBox
-        //    string division = txtDivisionName.Text;
-        //    string timesheetNumber = txtTimesheetNumber.Text;
-
-        //    worksheet.Cells[1, 1] = "Подразделение:";
-        //    worksheet.Cells[1, 2] = division;
-        //    worksheet.Cells[2, 1] = "Номер табеля:";
-        //    worksheet.Cells[2, 2] = timesheetNumber;
-
-        //    // Export headers from DataGrid
-        //    for (int i = 0; i < dataGridEmployees.Columns.Count; i++)
-        //    {
-        //        worksheet.Cells[4, i + 1] = dataGridEmployees.Columns[i].Header;
-        //    }
-
-        //    // Export data from DataGrid
-        //    for (int i = 0; i < dataGridEmployees.Items.Count; i++)
-        //    {
-        //        for (int j = 0; j < dataGridEmployees.Columns.Count; j++)
-        //        {
-        //            DataGridCell cell = GetCell(dataGridEmployees, i, j);
-        //            if (cell != null)
-        //            {
-        //                TextBlock cellContent = cell.Content as TextBlock;
-        //                if (cellContent != null)
-        //                {
-        //                    worksheet.Cells[i + 5, j + 1] = cellContent.Text;
-        //                }
-        //                else
-        //                {
-        //                    TextBox textBox = GetTextBoxFromCell(cell);
-        //                    if (textBox != null)
-        //                    {
-        //                        worksheet.Cells[i + 5, j + 1] = textBox.Text;
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-
-        //    // Save and close the workbook
-        //    string filePath = "C:\\Users\\Darya\\OneDrive\\Рабочий стол\\WpfApp1\\Tabel.xlsx";
-
-        //    if (File.Exists(filePath))
-        //    {
-        //        var result = MessageBox.Show("Файл уже существует. Перезаписать его?", "Подтверждение", MessageBoxButton.YesNo);
-        //        if (result == MessageBoxResult.No)
-        //        {
-        //            // Пользователь отказался от перезаписи, укажите другой путь или прервите операцию
-        //            return;
-        //        }
-        //    }
-
-        //    workbook.SaveAs(filePath);
-        //    workbook.Close();
-        //}
-
-        //private TextBox GetTextBoxFromCell(DataGridCell cell)
-        //{
-        //    if (cell == null || cell.Content == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    if (cell.Content is TextBox textBox)
-        //    {
-        //        return textBox;
-        //    }
-        //    else
-        //    {
-        //        ContentPresenter contentPresenter = FindVisualChild2<ContentPresenter>(cell);
-        //        DataTemplate dataTemplate = contentPresenter.ContentTemplate;
-
-        //        if (dataTemplate != null)
-        //        {
-        //            Control control = dataTemplate.LoadContent() as Control;
-        //            if (control is TextBox txtBox)
-        //            {
-        //                return txtBox;
-        //            }
-        //        }
-        //    }
-
-        //    return null;
-        //}
-
-        //private childItem FindVisualChild2<childItem>(DependencyObject obj) where childItem : DependencyObject
-        //{
-        //    for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
-        //    {
-        //        DependencyObject child = VisualTreeHelper.GetChild(obj, i);
-        //        if (child is childItem)
-        //        {
-        //            return (childItem)child;
-        //        }
-        //        else
-        //        {
-        //            childItem childOfChild = FindVisualChild<childItem>(child);
-        //            if (childOfChild != null)
-        //            {
-        //                return childOfChild;
-        //            }
-        //        }
-        //    }
-        //    return null;
-        //}
-
-
-
-
-
-
-
-
-
-        //private DataGridCell GetCell(DataGrid dg, int row, int column)
-        //{
-        //    DataGridRow rowContainer = (DataGridRow)dg.ItemContainerGenerator.ContainerFromIndex(row);
-        //    if (rowContainer != null)
-        //    {
-        //        DataGridCellsPresenter presenter = FindVisualChild<DataGridCellsPresenter>(rowContainer);
-        //        if (presenter == null)
-        //        {
-        //            dg.ScrollIntoView(rowContainer, dg.Columns[column]);
-        //            presenter = FindVisualChild<DataGridCellsPresenter>(rowContainer);
-        //        }
-        //        DataGridCell cell = (DataGridCell)presenter.ItemContainerGenerator.ContainerFromIndex(column);
-        //        return cell;
-        //    }
-        //    return null;
-        //}
-
-        //private childItem FindVisualChild<childItem>(DependencyObject obj) where childItem : DependencyObject
-        //{
-        //    for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
-        //    {
-        //        DependencyObject child = VisualTreeHelper.GetChild(obj, i);
-        //        if (child != null && child is childItem)
-        //        {
-        //            return (childItem)child;
-        //        }
-        //        else
-        //        {
-        //            childItem childOfChild = FindVisualChild<childItem>(child);
-        //            if (childOfChild != null)
-        //            {
-        //                return childOfChild;
-        //            }
-        //        }
-        //    }
-        //    return null;
-        //}
-
-
-      
-        private void SaveDataToDatabase_Click(object sender, RoutedEventArgs e)
+              private void SaveDataToDatabase_Click(object sender, RoutedEventArgs e)
         {
             using (var context = new ApplicationContext()) // Замените YourDbContext на ваш контекст данных
             {
@@ -332,10 +145,15 @@ namespace Tabel.View
                         Data28 = item.Data28 ?? "",
                         Data29 = item.Data29 ?? "",
                         Data30 = item.Data30 ?? "",
-                        Data31 = item.Data31 ?? ""
+                        Data31 = item.Data31 ?? "",
+                       
+
                     };
+                    //// Присвоение значения itogdays перед сохранением
+                    //employee.itogdays = item.CountOccurrencesOfLetterYa(item);
 
                     context.EmployeeTabels.Add(employee);
+
                 }
 
                 context.SaveChanges();
@@ -343,6 +161,10 @@ namespace Tabel.View
 
             MessageBox.Show("Данные успешно сохранены в базу данных.");
         }
+
+
+
+       
 
         private void ExportToExcel_Click(object sender, RoutedEventArgs e)
         {
@@ -362,15 +184,69 @@ namespace Tabel.View
                     worksheet.Cell("N2").SetValue($"Табель учёта использования рабочего времени № {timesheetNumber}");
                     worksheet.Cell("Q3").SetValue($"Подразделение: {divisionName}");
                    worksheet.Cell("B2").SetValue($"Организация: {organizationName}");
-                    worksheet.Cell("AH6").SetValue($"Итого дней");
-                    worksheet.Cell("AI6").SetValue($"Итого отработано часов");
+                   
                     worksheet.Cell("B15").SetValue($"Ответственное лицо");
+                    // Определяем ячейки для вставки формулы
+                    var range = worksheet.Range("AH7");
+                    var range2 = worksheet.Range("AH8");
+                    var range3 = worksheet.Range("AH9");
+                    var range4 = worksheet.Range("AH10");
+                    var range5 = worksheet.Range("AH11");
+                    var range6 = worksheet.Range("AH12");
+                    var range7 = worksheet.Range("AH13");
+                    var range8 = worksheet.Range("AH14");
+
+                    // Вставляем формулу в указанный диапазон ячеек
+                    range.FormulaA1 = "=IF(C7=\"я\",1,0)+IF(D7=\"я\",1,0)+IF(E7=\"я\",1,0)+IF(F7=\"я\",1,0)" +
+                        "+IF(G7=\"я\",1,0)+IF(H7=\"я\",1,0)+IF(I7=\"я\",1,0)+IF(J7=\"я\",1,0)+IF(K7=\"я\",1,0)+IF(L7=\"я\",1,0)+IF(M7=\"я\",1,0)+IF(N7=\"я\",1,0)" +
+                        "+IF(G7=\"я\",1,0)+IF(O7=\"я\",1,0)+IF(P7=\"я\",1,0)+IF(Q7=\"я\",1,0)+IF(R7=\"я\",1,0)" +
+                        "+IF(S7=\"я\",1,0)+IF(T7=\"я\",1,0)+IF(U7=\"я\",1,0)+IF(V7=\"я\",1,0)+IF(W7=\"я\",1,0)+IF(X7=\"я\",1,0)" +
+                        "+IF(Y7=\"я\",1,0)+IF(Z7=\"я\",1,0)+IF(AA7=\"я\",1,0)+IF(AB7=\"я\",1,0)+IF(AC7=\"я\",1,0)+IF(AD7=\"я\",1,0)+IF(AE7=\"я\",1,0)+IF(AF7=\"я\",1,0)+IF(AG7=\"я\",1,0)";
+
+                    range2.FormulaA1 = "=IF(C8=\"я\",1,0)+IF(D8=\"я\",1,0)+IF(E8=\"я\",1,0)+IF(F8=\"я\",1,0)" +
+                                           "+IF(G8=\"я\",1,0)+IF(H8=\"я\",1,0)+IF(I8=\"я\",1,0)+IF(J8=\"я\",1,0)+IF(K8=\"я\",1,0)+IF(L8=\"я\",1,0)+IF(M8=\"я\",1,0)+IF(N8=\"я\",1,0)" +
+                                           "+IF(G8=\"я\",1,0)+IF(O8=\"я\",1,0)+IF(P8=\"я\",1,0)+IF(Q8=\"я\",1,0)+IF(R8=\"я\",1,0)" +
+                                           "+IF(S8=\"я\",1,0)+IF(T8=\"я\",1,0)+IF(U8=\"я\",1,0)+IF(V8=\"я\",1,0)+IF(W8=\"я\",1,0)+IF(X8=\"я\",1,0)" +
+                                           "+IF(Y8=\"я\",1,0)+IF(Z8=\"я\",1,0)+IF(AA8=\"я\",1,0)+IF(AB8=\"я\",1,0)+IF(AC8=\"я\",1,0)+IF(AD8=\"я\",1,0)+IF(AE8=\"я\",1,0)+IF(AF8=\"я\",1,0)+IF(AG8=\"я\",1,0)";
+                    range3.FormulaA1 = "=IF(C9=\"я\",1,0)+IF(D9=\"я\",1,0)+IF(E9=\"я\",1,0)+IF(F9=\"я\",1,0)" +
+                       "+IF(G9=\"я\",1,0)+IF(H9=\"я\",1,0)+IF(I9=\"я\",1,0)+IF(J9=\"я\",1,0)+IF(K9=\"я\",1,0)+IF(L9=\"я\",1,0)+IF(M9=\"я\",1,0)+IF(N9=\"я\",1,0)" +
+                       "+IF(G9=\"я\",1,0)+IF(O9=\"я\",1,0)+IF(P9=\"я\",1,0)+IF(Q9=\"я\",1,0)+IF(R9=\"я\",1,0)" +
+                       "+IF(S9=\"я\",1,0)+IF(T9=\"я\",1,0)+IF(U9=\"я\",1,0)+IF(V9=\"я\",1,0)+IF(W9=\"я\",1,0)+IF(X9=\"я\",1,0)" +
+                       "+IF(Y9=\"я\",1,0)+IF(Z9=\"я\",1,0)+IF(AA9=\"я\",1,0)+IF(AB9=\"я\",1,0)+IF(AC9=\"я\",1,0)+IF(AD9=\"я\",1,0)+IF(AE9=\"я\",1,0)+IF(AF9=\"я\",1,0)+IF(AG9=\"я\",1,0)";
+
+                    range4.FormulaA1 = "=IF(C10=\"я\",1,0)+IF(D10=\"я\",1,0)+IF(E10=\"я\",1,0)+IF(F10=\"я\",1,0)" +
+                                           "+IF(G10=\"я\",1,0)+IF(H10=\"я\",1,0)+IF(I10=\"я\",1,0)+IF(J10=\"я\",1,0)+IF(K10=\"я\",1,0)+IF(L10=\"я\",1,0)+IF(M10=\"я\",1,0)+IF(N10=\"я\",1,0)" +
+                                           "+IF(G10=\"я\",1,0)+IF(O10=\"я\",1,0)+IF(P10=\"я\",1,0)+IF(Q10=\"я\",1,0)+IF(R10=\"я\",1,0)" +
+                                           "+IF(S10=\"я\",1,0)+IF(T10=\"я\",1,0)+IF(U10=\"я\",1,0)+IF(V10=\"я\",1,0)+IF(W10=\"я\",1,0)+IF(X10=\"я\",1,0)" +
+                                           "+IF(Y10=\"я\",1,0)+IF(Z10=\"я\",1,0)+IF(AA10=\"я\",1,0)+IF(AB10=\"я\",1,0)+IF(AC10=\"я\",1,0)+IF(AD10=\"я\",1,0)+IF(AE10=\"я\",1,0)+IF(AF10=\"я\",1,0)+IF(AG10=\"я\",1,0)";
+                    range5.FormulaA1 = "=IF(C11=\"я\",1,0)+IF(D11=\"я\",1,0)+IF(E11=\"я\",1,0)+IF(F11=\"я\",1,0)" +
+                        "+IF(G11=\"я\",1,0)+IF(H11=\"я\",1,0)+IF(I11=\"я\",1,0)+IF(J11=\"я\",1,0)+IF(K11=\"я\",1,0)+IF(L11=\"я\",1,0)+IF(M11=\"я\",1,0)+IF(N11=\"я\",1,0)" +
+                        "+IF(G11=\"я\",1,0)+IF(O11=\"я\",1,0)+IF(P11=\"я\",1,0)+IF(Q11=\"я\",1,0)+IF(R11=\"я\",1,0)" +
+                        "+IF(S11=\"я\",1,0)+IF(T11=\"я\",1,0)+IF(U11=\"я\",1,0)+IF(V11=\"я\",1,0)+IF(W11=\"я\",1,0)+IF(X11=\"я\",1,0)" +
+                        "+IF(Y11=\"я\",1,0)+IF(Z11=\"я\",1,0)+IF(AA11=\"я\",1,0)+IF(AB11=\"я\",1,0)+IF(AC11=\"я\",1,0)+IF(AD11=\"я\",1,0)+IF(AE11=\"я\",1,0)+IF(AF11=\"я\",1,0)+IF(AG11=\"я\",1,0)";
+
+                    range8.FormulaA1 = "=IF(C14=\"я\",1,0)+IF(D14=\"я\",1,0)+IF(E14=\"я\",1,0)+IF(F14=\"я\",1,0)" +
+                                           "+IF(G14=\"я\",1,0)+IF(H14=\"я\",1,0)+IF(I14=\"я\",1,0)+IF(J14=\"я\",1,0)+IF(K14=\"я\",1,0)+IF(L14=\"я\",1,0)+IF(M14=\"я\",1,0)+IF(N14=\"я\",1,0)" +
+                                           "+IF(G14=\"я\",1,0)+IF(O14=\"я\",1,0)+IF(P14=\"я\",1,0)+IF(Q14=\"я\",1,0)+IF(R14=\"я\",1,0)" +
+                                           "+IF(S14=\"я\",1,0)+IF(T14=\"я\",1,0)+IF(U14=\"я\",1,0)+IF(V14=\"я\",1,0)+IF(W14=\"я\",1,0)+IF(X14=\"я\",1,0)" +
+                                           "+IF(Y14=\"я\",1,0)+IF(Z14=\"я\",1,0)+IF(AA14=\"я\",1,0)+IF(AB14=\"я\",1,0)+IF(AC14=\"я\",1,0)+IF(AD14=\"я\",1,0)+IF(AE14=\"я\",1,0)+IF(AF14=\"я\",1,0)+IF(AG14=\"я\",1,0)";
+                    range6.FormulaA1 = "=IF(C12=\"я\",1,0)+IF(D12=\"я\",1,0)+IF(E12=\"я\",1,0)+IF(F12=\"я\",1,0)" +
+                       "+IF(G12=\"я\",1,0)+IF(H12=\"я\",1,0)+IF(I12=\"я\",1,0)+IF(J12=\"я\",1,0)+IF(K12=\"я\",1,0)+IF(L12=\"я\",1,0)+IF(M12=\"я\",1,0)+IF(N12=\"я\",1,0)" +
+                       "+IF(G12=\"я\",1,0)+IF(O12=\"я\",1,0)+IF(P12=\"я\",1,0)+IF(Q12=\"я\",1,0)+IF(R12=\"я\",1,0)" +
+                       "+IF(S12=\"я\",1,0)+IF(T12=\"я\",1,0)+IF(U12=\"я\",1,0)+IF(V12=\"я\",1,0)+IF(W12=\"я\",1,0)+IF(X12=\"я\",1,0)" +
+                       "+IF(Y12=\"я\",1,0)+IF(Z12=\"я\",1,0)+IF(AA12=\"я\",1,0)+IF(AB12=\"я\",1,0)+IF(AC12=\"я\",1,0)+IF(AD12=\"я\",1,0)+IF(AE12=\"я\",1,0)+IF(AF12=\"я\",1,0)+IF(AG12=\"я\",1,0)";
+
+                    range7.FormulaA1 = "=IF(C13=\"я\",1,0)+IF(D13=\"я\",1,0)+IF(E13=\"я\",1,0)+IF(F13=\"я\",1,0)" +
+                                           "+IF(G13=\"я\",1,0)+IF(H13=\"я\",1,0)+IF(I13=\"я\",1,0)+IF(J13=\"я\",1,0)+IF(K13=\"я\",1,0)+IF(L13=\"я\",1,0)+IF(M13=\"я\",1,0)+IF(N13=\"я\",1,0)" +
+                                           "+IF(G13=\"я\",1,0)+IF(O13=\"я\",1,0)+IF(P13=\"я\",1,0)+IF(Q13=\"я\",1,0)+IF(R13=\"я\",1,0)" +
+                                           "+IF(S13=\"я\",1,0)+IF(T13=\"я\",1,0)+IF(U13=\"я\",1,0)+IF(V13=\"я\",1,0)+IF(W13=\"я\",1,0)+IF(X13=\"я\",1,0)" +
+                                           "+IF(Y13=\"я\",1,0)+IF(Z13=\"я\",1,0)+IF(AA13=\"я\",1,0)+IF(AB13=\"я\",1,0)+IF(AC13=\"я\",1,0)+IF(AD13=\"я\",1,0)+IF(AE13=\"я\",1,0)+IF(AF13=\"я\",1,0)+IF(AG13=\"я\",1,0)";
 
 
                     // Заголовки столбцов
                     var columns = new List<string> { "№п/п", "ФИО", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
                         "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", 
-                        "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" };
+                        "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "Итого дней", "Итого отработано часов" };
                     for (int i = 0; i < columns.Count; i++)
                     {
                         worksheet.Cell(6, i + 1).Value = columns[i];
@@ -474,6 +350,104 @@ namespace Tabel.View
             {
                 get; set;
             }
+            public int itogdays
+            {
+                get; set;
+            }
+            public int itoghours
+            {
+                get; set;
+            }
+
+        //    public int CountOccurrencesOfLetterYa(Employee item)
+        //    {
+        //        int count = 0;
+
+        //        using (var context = new ApplicationContext())
+        //        {
+        //            var employeeTable = context.EmployeeTabels.ToList();
+
+        //            foreach (var employee in employeeTable)
+        //            {
+
+        //                count += CountOccurrencesInString(employee.Data1, 'Я');
+        //                count += CountOccurrencesInString(employee.Data1, 'я');
+        //                count += CountOccurrencesInString(employee.Data2, 'Я');
+        //                count += CountOccurrencesInString(employee.Data2, 'я');
+        //                count += CountOccurrencesInString(employee.Data3, 'Я');
+        //                count += CountOccurrencesInString(employee.Data3, 'я');
+        //                count += CountOccurrencesInString(employee.Data4, 'Я');
+        //                count += CountOccurrencesInString(employee.Data4, 'я');
+        //                count += CountOccurrencesInString(employee.Data5, 'Я');
+        //                count += CountOccurrencesInString(employee.Data5, 'я');
+        //                count += CountOccurrencesInString(employee.Data6, 'Я');
+        //                count += CountOccurrencesInString(employee.Data6, 'Я');
+        //                count += CountOccurrencesInString(employee.Data7, 'Я');
+        //                count += CountOccurrencesInString(employee.Data7, 'я');
+        //                count += CountOccurrencesInString(employee.Data8, 'Я');
+        //                count += CountOccurrencesInString(employee.Data8, 'я');
+        //                count += CountOccurrencesInString(employee.Data9, 'Я');
+        //                count += CountOccurrencesInString(employee.Data9, 'я');
+        //                count += CountOccurrencesInString(employee.Data10, 'Я');
+        //                count += CountOccurrencesInString(employee.Data10, 'я');
+        //                count += CountOccurrencesInString(employee.Data11, 'Я');
+        //                count += CountOccurrencesInString(employee.Data11, 'я');
+        //                count += CountOccurrencesInString(employee.Data12, 'Я');
+        //                count += CountOccurrencesInString(employee.Data12, 'я');
+        //                count += CountOccurrencesInString(employee.Data13, 'Я');
+        //                count += CountOccurrencesInString(employee.Data13, 'я');
+        //                count += CountOccurrencesInString(employee.Data14, 'Я');
+        //                count += CountOccurrencesInString(employee.Data14, 'я');
+        //                count += CountOccurrencesInString(employee.Data15, 'Я');
+        //                count += CountOccurrencesInString(employee.Data15, 'я');
+        //                count += CountOccurrencesInString(employee.Data16, 'Я');
+        //                count += CountOccurrencesInString(employee.Data16, 'я');
+        //                count += CountOccurrencesInString(employee.Data17, 'Я');
+        //                count += CountOccurrencesInString(employee.Data17, 'я');
+        //                count += CountOccurrencesInString(employee.Data18, 'Я');
+        //                count += CountOccurrencesInString(employee.Data18, 'я');
+        //                count += CountOccurrencesInString(employee.Data19, 'Я');
+        //                count += CountOccurrencesInString(employee.Data19, 'я');
+        //                count += CountOccurrencesInString(employee.Data20, 'Я');
+        //                count += CountOccurrencesInString(employee.Data20, 'я');
+        //                count += CountOccurrencesInString(employee.Data21, 'Я');
+        //                count += CountOccurrencesInString(employee.Data21, 'я');
+        //                count += CountOccurrencesInString(employee.Data22, 'Я');
+        //                count += CountOccurrencesInString(employee.Data22, 'я');
+        //                count += CountOccurrencesInString(employee.Data23, 'Я');
+        //                count += CountOccurrencesInString(employee.Data23, 'я');
+        //                count += CountOccurrencesInString(employee.Data24, 'Я');
+        //                count += CountOccurrencesInString(employee.Data24, 'я');
+        //                count += CountOccurrencesInString(employee.Data25, 'Я');
+        //                count += CountOccurrencesInString(employee.Data25, 'я');
+        //                count += CountOccurrencesInString(employee.Data26, 'Я');
+        //                count += CountOccurrencesInString(employee.Data26, 'я');
+        //                count += CountOccurrencesInString(employee.Data27, 'Я');
+        //                count += CountOccurrencesInString(employee.Data27, 'я');
+        //                count += CountOccurrencesInString(employee.Data28, 'Я');
+        //                count += CountOccurrencesInString(employee.Data28, 'я');
+        //                count += CountOccurrencesInString(employee.Data29, 'Я');
+        //                count += CountOccurrencesInString(employee.Data29, 'я');
+        //                count += CountOccurrencesInString(employee.Data30, 'Я');
+        //                count += CountOccurrencesInString(employee.Data30, 'я');
+        //                count += CountOccurrencesInString(employee.Data31, 'Я');
+        //                count += CountOccurrencesInString(employee.Data31, 'я');
+
+        //            }
+        //        }
+
+        //        return count;
+        //    }
+
+        //    public int CountOccurrencesInString(string input, char letter)
+        //    {
+        //        if (string.IsNullOrEmpty(input))
+        //        {
+        //            return 0;
+        //        }
+
+        //        return input.Count(c => c == letter);
+        //    }
         }
 
         

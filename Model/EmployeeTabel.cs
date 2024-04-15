@@ -73,5 +73,13 @@ namespace Tabel.Model
         {
             get; set;
         }
+        public int itogdays
+        {
+            get; set;
+        }
+        public int itoghours
+        {
+            get; set;
+        }
     }
     }
