@@ -214,50 +214,82 @@ namespace Tabel.View
                     var range8 = worksheet.Range("AH14");
 
                     // Вставляем формулу в указанный диапазон ячеек
-                    range.FormulaA1 = "=IF(C7=\"я\",1,0)+IF(D7=\"я\",1,0)+IF(E7=\"я\",1,0)+IF(F7=\"я\",1,0)" +
-                        "+IF(G7=\"я\",1,0)+IF(H7=\"я\",1,0)+IF(I7=\"я\",1,0)+IF(J7=\"я\",1,0)+IF(K7=\"я\",1,0)+IF(L7=\"я\",1,0)+IF(M7=\"я\",1,0)+IF(N7=\"я\",1,0)" +
-                        "+IF(O7=\"я\",1,0)+IF(P7=\"я\",1,0)+IF(Q7=\"я\",1,0)+IF(R7=\"я\",1,0)" +
-                        "+IF(S7=\"я\",1,0)+IF(T7=\"я\",1,0)+IF(U7=\"я\",1,0)+IF(V7=\"я\",1,0)+IF(W7=\"я\",1,0)+IF(X7=\"я\",1,0)" +
-                        "+IF(Y7=\"я\",1,0)+IF(Z7=\"я\",1,0)+IF(AA7=\"я\",1,0)+IF(AB7=\"я\",1,0)+IF(AC7=\"я\",1,0)+IF(AD7=\"я\",1,0)+IF(AE7=\"я\",1,0)+IF(AF7=\"я\",1,0)+IF(AG7=\"я\",1,0)";
+                    range.FormulaA1 = "=IF(LOWER(C7)=\"я\",1,0)+IF(LOWER(D7)=\"я\",1,0)+IF(LOWER(E7)=\"я\",1,0)+IF(LOWER(F7)=\"я\",1,0)" +
+                  "+IF(LOWER(G7)=\"я\",1,0)+IF(LOWER(H7)=\"я\",1,0)+IF(LOWER(I7)=\"я\",1,0)+IF(LOWER(J7)=\"я\",1,0)" +
+                  "+IF(LOWER(K7)=\"я\",1,0)+IF(LOWER(L7)=\"я\",1,0)+IF(LOWER(M7)=\"я\",1,0)+IF(LOWER(N7)=\"я\",1,0)" +
+                  "+IF(LOWER(O7)=\"я\",1,0)+IF(LOWER(P7)=\"я\",1,0)+IF(LOWER(Q7)=\"я\",1,0)+IF(LOWER(R7)=\"я\",1,0)" +
+                  "+IF(LOWER(S7)=\"я\",1,0)+IF(LOWER(T7)=\"я\",1,0)+IF(LOWER(U7)=\"я\",1,0)+IF(LOWER(V7)=\"я\",1,0)" +
+                  "+IF(LOWER(W7)=\"я\",1,0)+IF(LOWER(X7)=\"я\",1,0)+IF(LOWER(Y7)=\"я\",1,0)+IF(LOWER(Z7)=\"я\",1,0)" +
+                  "+IF(LOWER(AA7)=\"я\",1,0)+IF(LOWER(AB7)=\"я\",1,0)+IF(LOWER(AC7)=\"я\",1,0)+IF(LOWER(AD7)=\"я\",1,0)" +
+                  "+IF(LOWER(AE7)=\"я\",1,0)+IF(LOWER(AF7)=\"я\",1,0)+IF(LOWER(AG7)=\"я\",1,0)";
 
-                    range2.FormulaA1 = "=IF(C8=\"я\",1,0)+IF(D8=\"я\",1,0)+IF(E8=\"я\",1,0)+IF(F8=\"я\",1,0)" +
-                                           "+IF(G8=\"я\",1,0)+IF(H8=\"я\",1,0)+IF(I8=\"я\",1,0)+IF(J8=\"я\",1,0)+IF(K8=\"я\",1,0)+IF(L8=\"я\",1,0)+IF(M8=\"я\",1,0)+IF(N8=\"я\",1,0)" +
-                                           "+IF(G8=\"я\",1,0)+IF(O8=\"я\",1,0)+IF(P8=\"я\",1,0)+IF(Q8=\"я\",1,0)+IF(R8=\"я\",1,0)" +
-                                           "+IF(S8=\"я\",1,0)+IF(T8=\"я\",1,0)+IF(U8=\"я\",1,0)+IF(V8=\"я\",1,0)+IF(W8=\"я\",1,0)+IF(X8=\"я\",1,0)" +
-                                           "+IF(Y8=\"я\",1,0)+IF(Z8=\"я\",1,0)+IF(AA8=\"я\",1,0)+IF(AB8=\"я\",1,0)+IF(AC8=\"я\",1,0)+IF(AD8=\"я\",1,0)+IF(AE8=\"я\",1,0)+IF(AF8=\"я\",1,0)+IF(AG8=\"я\",1,0)";
-                    range3.FormulaA1 = "=IF(C9=\"я\",1,0)+IF(D9=\"я\",1,0)+IF(E9=\"я\",1,0)+IF(F9=\"я\",1,0)" +
-                       "+IF(G9=\"я\",1,0)+IF(H9=\"я\",1,0)+IF(I9=\"я\",1,0)+IF(J9=\"я\",1,0)+IF(K9=\"я\",1,0)+IF(L9=\"я\",1,0)+IF(M9=\"я\",1,0)+IF(N9=\"я\",1,0)" +
-                       "+IF(O9=\"я\",1,0)+IF(P9=\"я\",1,0)+IF(Q9=\"я\",1,0)+IF(R9=\"я\",1,0)" +
-                       "+IF(S9=\"я\",1,0)+IF(T9=\"я\",1,0)+IF(U9=\"я\",1,0)+IF(V9=\"я\",1,0)+IF(W9=\"я\",1,0)+IF(X9=\"я\",1,0)" +
-                       "+IF(Y9=\"я\",1,0)+IF(Z9=\"я\",1,0)+IF(AA9=\"я\",1,0)+IF(AB9=\"я\",1,0)+IF(AC9=\"я\",1,0)+IF(AD9=\"я\",1,0)+IF(AE9=\"я\",1,0)+IF(AF9=\"я\",1,0)+IF(AG9=\"я\",1,0)";
 
-                    range4.FormulaA1 = "=IF(C10=\"я\",1,0)+IF(D10=\"я\",1,0)+IF(E10=\"я\",1,0)+IF(F10=\"я\",1,0)" +
-                                           "+IF(G10=\"я\",1,0)+IF(H10=\"я\",1,0)+IF(I10=\"я\",1,0)+IF(J10=\"я\",1,0)+IF(K10=\"я\",1,0)+IF(L10=\"я\",1,0)+IF(M10=\"я\",1,0)+IF(N10=\"я\",1,0)" +
-                                           "+IF(O10=\"я\",1,0)+IF(P10=\"я\",1,0)+IF(Q10=\"я\",1,0)+IF(R10=\"я\",1,0)" +
-                                           "+IF(S10=\"я\",1,0)+IF(T10=\"я\",1,0)+IF(U10=\"я\",1,0)+IF(V10=\"я\",1,0)+IF(W10=\"я\",1,0)+IF(X10=\"я\",1,0)" +
-                                           "+IF(Y10=\"я\",1,0)+IF(Z10=\"я\",1,0)+IF(AA10=\"я\",1,0)+IF(AB10=\"я\",1,0)+IF(AC10=\"я\",1,0)+IF(AD10=\"я\",1,0)+IF(AE10=\"я\",1,0)+IF(AF10=\"я\",1,0)+IF(AG10=\"я\",1,0)";
-                    range5.FormulaA1 = "=IF(C11=\"я\",1,0)+IF(D11=\"я\",1,0)+IF(E11=\"я\",1,0)+IF(F11=\"я\",1,0)" +
-                        "+IF(G11=\"я\",1,0)+IF(H11=\"я\",1,0)+IF(I11=\"я\",1,0)+IF(J11=\"я\",1,0)+IF(K11=\"я\",1,0)+IF(L11=\"я\",1,0)+IF(M11=\"я\",1,0)+IF(N11=\"я\",1,0)" +
-                        "+IF(O11=\"я\",1,0)+IF(P11=\"я\",1,0)+IF(Q11=\"я\",1,0)+IF(R11=\"я\",1,0)" +
-                        "+IF(S11=\"я\",1,0)+IF(T11=\"я\",1,0)+IF(U11=\"я\",1,0)+IF(V11=\"я\",1,0)+IF(W11=\"я\",1,0)+IF(X11=\"я\",1,0)" +
-                        "+IF(Y11=\"я\",1,0)+IF(Z11=\"я\",1,0)+IF(AA11=\"я\",1,0)+IF(AB11=\"я\",1,0)+IF(AC11=\"я\",1,0)+IF(AD11=\"я\",1,0)+IF(AE11=\"я\",1,0)+IF(AF11=\"я\",1,0)+IF(AG11=\"я\",1,0)";
+                    range2.FormulaA1 = "=IF(LOWER(C8)=\"я\",1,0)+IF(LOWER(D8)=\"я\",1,0)+IF(LOWER(E8)=\"я\",1,0)+IF(LOWER(F8)=\"я\",1,0)" +
+                    "+IF(LOWER(G8)=\"я\",1,0)+IF(LOWER(H8)=\"я\",1,0)+IF(LOWER(I8)=\"я\",1,0)+IF(LOWER(J8)=\"я\",1,0)" +
+                    "+IF(LOWER(K8)=\"я\",1,0)+IF(LOWER(L8)=\"я\",1,0)+IF(LOWER(M8)=\"я\",1,0)+IF(LOWER(N8)=\"я\",1,0)" +
+                    "+IF(LOWER(O8)=\"я\",1,0)+IF(LOWER(P8)=\"я\",1,0)+IF(LOWER(Q8)=\"я\",1,0)+IF(LOWER(R8)=\"я\",1,0)" +
+                    "+IF(LOWER(S8)=\"я\",1,0)+IF(LOWER(T8)=\"я\",1,0)+IF(LOWER(U8)=\"я\",1,0)+IF(LOWER(V8)=\"я\",1,0)" +
+                    "+IF(LOWER(W8)=\"я\",1,0)+IF(LOWER(X8)=\"я\",1,0)+IF(LOWER(Y8)=\"я\",1,0)+IF(LOWER(Z8)=\"я\",1,0)" +
+                    "+IF(LOWER(AA8)=\"я\",1,0)+IF(LOWER(AB8)=\"я\",1,0)+IF(LOWER(AC8)=\"я\",1,0)+IF(LOWER(AD8)=\"я\",1,0)" +
+                    "+IF(LOWER(AE8)=\"я\",1,0)+IF(LOWER(AF8)=\"я\",1,0)+IF(LOWER(AG8)=\"я\",1,0)";
 
-                    range8.FormulaA1 = "=IF(C14=\"я\",1,0)+IF(D14=\"я\",1,0)+IF(E14=\"я\",1,0)+IF(F14=\"я\",1,0)" +
-                                           "+IF(G14=\"я\",1,0)+IF(H14=\"я\",1,0)+IF(I14=\"я\",1,0)+IF(J14=\"я\",1,0)+IF(K14=\"я\",1,0)+IF(L14=\"я\",1,0)+IF(M14=\"я\",1,0)+IF(N14=\"я\",1,0)" +
-                                           "+IF(O14=\"я\",1,0)+IF(P14=\"я\",1,0)+IF(Q14=\"я\",1,0)+IF(R14=\"я\",1,0)" +
-                                           "+IF(S14=\"я\",1,0)+IF(T14=\"я\",1,0)+IF(U14=\"я\",1,0)+IF(V14=\"я\",1,0)+IF(W14=\"я\",1,0)+IF(X14=\"я\",1,0)" +
-                                           "+IF(Y14=\"я\",1,0)+IF(Z14=\"я\",1,0)+IF(AA14=\"я\",1,0)+IF(AB14=\"я\",1,0)+IF(AC14=\"я\",1,0)+IF(AD14=\"я\",1,0)+IF(AE14=\"я\",1,0)+IF(AF14=\"я\",1,0)+IF(AG14=\"я\",1,0)";
-                    range6.FormulaA1 = "=IF(C12=\"я\",1,0)+IF(D12=\"я\",1,0)+IF(E12=\"я\",1,0)+IF(F12=\"я\",1,0)" +
-                       "+IF(G12=\"я\",1,0)+IF(H12=\"я\",1,0)+IF(I12=\"я\",1,0)+IF(J12=\"я\",1,0)+IF(K12=\"я\",1,0)+IF(L12=\"я\",1,0)+IF(M12=\"я\",1,0)+IF(N12=\"я\",1,0)" +
-                       "++IF(O12=\"я\",1,0)+IF(P12=\"я\",1,0)+IF(Q12=\"я\",1,0)+IF(R12=\"я\",1,0)" +
-                       "+IF(S12=\"я\",1,0)+IF(T12=\"я\",1,0)+IF(U12=\"я\",1,0)+IF(V12=\"я\",1,0)+IF(W12=\"я\",1,0)+IF(X12=\"я\",1,0)" +
-                       "+IF(Y12=\"я\",1,0)+IF(Z12=\"я\",1,0)+IF(AA12=\"я\",1,0)+IF(AB12=\"я\",1,0)+IF(AC12=\"я\",1,0)+IF(AD12=\"я\",1,0)+IF(AE12=\"я\",1,0)+IF(AF12=\"я\",1,0)+IF(AG12=\"я\",1,0)";
 
-                    range7.FormulaA1 = "=IF(C13=\"я\",1,0)+IF(D13=\"я\",1,0)+IF(E13=\"я\",1,0)+IF(F13=\"я\",1,0)" +
-                                           "+IF(G13=\"я\",1,0)+IF(H13=\"я\",1,0)+IF(I13=\"я\",1,0)+IF(J13=\"я\",1,0)+IF(K13=\"я\",1,0)+IF(L13=\"я\",1,0)+IF(M13=\"я\",1,0)+IF(N13=\"я\",1,0)" +
-                                           "+IF(O13=\"я\",1,0)+IF(P13=\"я\",1,0)+IF(Q13=\"я\",1,0)+IF(R13=\"я\",1,0)" +
-                                           "+IF(S13=\"я\",1,0)+IF(T13=\"я\",1,0)+IF(U13=\"я\",1,0)+IF(V13=\"я\",1,0)+IF(W13=\"я\",1,0)+IF(X13=\"я\",1,0)" +
-                                           "+IF(Y13=\"я\",1,0)+IF(Z13=\"я\",1,0)+IF(AA13=\"я\",1,0)+IF(AB13=\"я\",1,0)+IF(AC13=\"я\",1,0)+IF(AD13=\"я\",1,0)+IF(AE13=\"я\",1,0)+IF(AF13=\"я\",1,0)+IF(AG13=\"я\",1,0)";
+                    range3.FormulaA1 = "=IF(LOWER(C9)=\"я\",1,0)+IF(LOWER(D9)=\"я\",1,0)+IF(LOWER(E9)=\"я\",1,0)+IF(LOWER(F9)=\"я\",1,0)" +
+                    "+IF(LOWER(G9)=\"я\",1,0)+IF(LOWER(H9)=\"я\",1,0)+IF(LOWER(I9)=\"я\",1,0)+IF(LOWER(J9)=\"я\",1,0)" +
+                    "+IF(LOWER(K9)=\"я\",1,0)+IF(LOWER(L9)=\"я\",1,0)+IF(LOWER(M9)=\"я\",1,0)+IF(LOWER(N9)=\"я\",1,0)" +
+                    "+IF(LOWER(O9)=\"я\",1,0)+IF(LOWER(P9)=\"я\",1,0)+IF(LOWER(Q9)=\"я\",1,0)+IF(LOWER(R9)=\"я\",1,0)" +
+                    "+IF(LOWER(S9)=\"я\",1,0)+IF(LOWER(T9)=\"я\",1,0)+IF(LOWER(U9)=\"я\",1,0)+IF(LOWER(V9)=\"я\",1,0)" +
+                    "+IF(LOWER(W9)=\"я\",1,0)+IF(LOWER(X9)=\"я\",1,0)+IF(LOWER(Y9)=\"я\",1,0)+IF(LOWER(Z9)=\"я\",1,0)" +
+                    "+IF(LOWER(AA9)=\"я\",1,0)+IF(LOWER(AB9)=\"я\",1,0)+IF(LOWER(AC9)=\"я\",1,0)+IF(LOWER(AD9)=\"я\",1,0)" +
+                    "+IF(LOWER(AE9)=\"я\",1,0)+IF(LOWER(AF9)=\"я\",1,0)+IF(LOWER(AG9)=\"я\",1,0)";
+
+
+                    range4.FormulaA1 = "=IF(LOWER(C10)=\"я\",1,0)+IF(LOWER(D10)=\"я\",1,0)+IF(LOWER(E10)=\"я\",1,0)+IF(LOWER(F10)=\"я\",1,0)" +
+                    "+IF(LOWER(G10)=\"я\",1,0)+IF(LOWER(H10)=\"я\",1,0)+IF(LOWER(I10)=\"я\",1,0)+IF(LOWER(J10)=\"я\",1,0)" +
+                    "+IF(LOWER(K10)=\"я\",1,0)+IF(LOWER(L10)=\"я\",1,0)+IF(LOWER(M10)=\"я\",1,0)+IF(LOWER(N10)=\"я\",1,0)" +
+                    "+IF(LOWER(O10)=\"я\",1,0)+IF(LOWER(P10)=\"я\",1,0)+IF(LOWER(Q10)=\"я\",1,0)+IF(LOWER(R10)=\"я\",1,0)" +
+                    "+IF(LOWER(S10)=\"я\",1,0)+IF(LOWER(T10)=\"я\",1,0)+IF(LOWER(U10)=\"я\",1,0)+IF(LOWER(V10)=\"я\",1,0)" +
+                    "+IF(LOWER(W10)=\"я\",1,0)+IF(LOWER(X10)=\"я\",1,0)+IF(LOWER(Y10)=\"я\",1,0)+IF(LOWER(Z10)=\"я\",1,0)" +
+                    "+IF(LOWER(AA10)=\"я\",1,0)+IF(LOWER(AB10)=\"я\",1,0)+IF(LOWER(AC10)=\"я\",1,0)+IF(LOWER(AD10)=\"я\",1,0)" +
+                    "+IF(LOWER(AE10)=\"я\",1,0)+IF(LOWER(AF10)=\"я\",1,0)+IF(LOWER(AG10)=\"я\",1,0)";
+
+                    range5.FormulaA1 = "=IF(LOWER(C11)=\"я\",1,0)+IF(LOWER(D11)=\"я\",1,0)+IF(LOWER(E11)=\"я\",1,0)+IF(LOWER(F11)=\"я\",1,0)" +
+                    "+IF(LOWER(G11)=\"я\",1,0)+IF(LOWER(H11)=\"я\",1,0)+IF(LOWER(I11)=\"я\",1,0)+IF(LOWER(J11)=\"я\",1,0)" +
+                    "+IF(LOWER(K11)=\"я\",1,0)+IF(LOWER(L11)=\"я\",1,0)+IF(LOWER(M11)=\"я\",1,0)+IF(LOWER(N11)=\"я\",1,0)" +
+                    "+IF(LOWER(O11)=\"я\",1,0)+IF(LOWER(P11)=\"я\",1,0)+IF(LOWER(Q11)=\"я\",1,0)+IF(LOWER(R11)=\"я\",1,0)" +
+                    "+IF(LOWER(S11)=\"я\",1,0)+IF(LOWER(T11)=\"я\",1,0)+IF(LOWER(U11)=\"я\",1,0)+IF(LOWER(V11)=\"я\",1,0)" +
+                    "+IF(LOWER(W11)=\"я\",1,0)+IF(LOWER(X11)=\"я\",1,0)+IF(LOWER(Y11)=\"я\",1,0)+IF(LOWER(Z11)=\"я\",1,0)" +
+                    "+IF(LOWER(AA11)=\"я\",1,0)+IF(LOWER(AB11)=\"я\",1,0)+IF(LOWER(AC11)=\"я\",1,0)+IF(LOWER(AD11)=\"я\",1,0)" +
+                    "+IF(LOWER(AE11)=\"я\",1,0)+IF(LOWER(AF11)=\"я\",1,0)+IF(LOWER(AG11)=\"я\",1,0)";
+                    
+                    range6.FormulaA1 = "=IF(LOWER(C12)=\"я\",1,0)+IF(LOWER(D12)=\"я\",1,0)+IF(LOWER(E12)=\"я\",1,0)+IF(LOWER(F12)=\"я\",1,0)" +
+                                        "+IF(LOWER(G12)=\"я\",1,0)+IF(LOWER(H12)=\"я\",1,0)+IF(LOWER(I12)=\"я\",1,0)+IF(LOWER(J12)=\"я\",1,0)" +
+                                        "+IF(LOWER(K12)=\"я\",1,0)+IF(LOWER(L12)=\"я\",1,0)+IF(LOWER(M12)=\"я\",1,0)+IF(LOWER(N12)=\"я\",1,0)" +
+                                        "+IF(LOWER(O12)=\"я\",1,0)+IF(LOWER(P12)=\"я\",1,0)+IF(LOWER(Q12)=\"я\",1,0)+IF(LOWER(R12)=\"я\",1,0)" +
+                                        "+IF(LOWER(S12)=\"я\",1,0)+IF(LOWER(T12)=\"я\",1,0)+IF(LOWER(U12)=\"я\",1,0)+IF(LOWER(V12)=\"я\",1,0)" +
+                                        "+IF(LOWER(W12)=\"я\",1,0)+IF(LOWER(X12)=\"я\",1,0)+IF(LOWER(Y12)=\"я\",1,0)+IF(LOWER(Z12)=\"я\",1,0)" +
+                                        "+IF(LOWER(AA12)=\"я\",1,0)+IF(LOWER(AB12)=\"я\",1,0)+IF(LOWER(AC12)=\"я\",1,0)+IF(LOWER(AD12)=\"я\",1,0)" +
+                                        "+IF(LOWER(AE12)=\"я\",1,0)+IF(LOWER(AF12)=\"я\",1,0)+IF(LOWER(AG12)=\"я\",1,0)";
+
+                    range7.FormulaA1 = "=IF(LOWER(C13)=\"я\",1,0)+IF(LOWER(D13)=\"я\",1,0)+IF(LOWER(E13)=\"я\",1,0)+IF(LOWER(F13)=\"я\",1,0)" +
+                      "+IF(LOWER(G13)=\"я\",1,0)+IF(LOWER(H13)=\"я\",1,0)+IF(LOWER(I13)=\"я\",1,0)+IF(LOWER(J13)=\"я\",1,0)" +
+                      "+IF(LOWER(K13)=\"я\",1,0)+IF(LOWER(L13)=\"я\",1,0)+IF(LOWER(M13)=\"я\",1,0)+IF(LOWER(N13)=\"я\",1,0)" +
+                      "+IF(LOWER(O13)=\"я\",1,0)+IF(LOWER(P13)=\"я\",1,0)+IF(LOWER(Q13)=\"я\",1,0)+IF(LOWER(R13)=\"я\",1,0)" +
+                      "+IF(LOWER(S13)=\"я\",1,0)+IF(LOWER(T13)=\"я\",1,0)+IF(LOWER(U13)=\"я\",1,0)+IF(LOWER(V13)=\"я\",1,0)" +
+                      "+IF(LOWER(W13)=\"я\",1,0)+IF(LOWER(X13)=\"я\",1,0)+IF(LOWER(Y13)=\"я\",1,0)+IF(LOWER(Z13)=\"я\",1,0)" +
+                      "+IF(LOWER(AA13)=\"я\",1,0)+IF(LOWER(AB13)=\"я\",1,0)+IF(LOWER(AC13)=\"я\",1,0)+IF(LOWER(AD13)=\"я\",1,0)" +
+                      "+IF(LOWER(AE13)=\"я\",1,0)+IF(LOWER(AF13)=\"я\",1,0)+IF(LOWER(AG13)=\"я\",1,0)";
+
+
+                    range8.FormulaA1 = "=IF(LOWER(C14)=\"я\",1,0)+IF(LOWER(D14)=\"я\",1,0)+IF(LOWER(E14)=\"я\",1,0)+IF(LOWER(F14)=\"я\",1,0)" +
+                    "+IF(LOWER(G14)=\"я\",1,0)+IF(LOWER(H14)=\"я\",1,0)+IF(LOWER(I14)=\"я\",1,0)+IF(LOWER(J14)=\"я\",1,0)" +
+                    "+IF(LOWER(K14)=\"я\",1,0)+IF(LOWER(L14)=\"я\",1,0)+IF(LOWER(M14)=\"я\",1,0)+IF(LOWER(N14)=\"я\",1,0)" +
+                    "+IF(LOWER(O14)=\"я\",1,0)+IF(LOWER(P14)=\"я\",1,0)+IF(LOWER(Q14)=\"я\",1,0)+IF(LOWER(R14)=\"я\",1,0)" +
+                    "+IF(LOWER(S14)=\"я\",1,0)+IF(LOWER(T14)=\"я\",1,0)+IF(LOWER(U14)=\"я\",1,0)+IF(LOWER(V14)=\"я\",1,0)" +
+                    "+IF(LOWER(W14)=\"я\",1,0)+IF(LOWER(X14)=\"я\",1,0)+IF(LOWER(Y14)=\"я\",1,0)+IF(LOWER(Z14)=\"я\",1,0)" +
+                    "+IF(LOWER(AA14)=\"я\",1,0)+IF(LOWER(AB14)=\"я\",1,0)+IF(LOWER(AC14)=\"я\",1,0)+IF(LOWER(AD14)=\"я\",1,0)" +
+                    "+IF(LOWER(AE14)=\"я\",1,0)+IF(LOWER(AF14)=\"я\",1,0)+IF(LOWER(AG14)=\"я\",1,0)";
+
 
 
 
@@ -390,104 +422,7 @@ namespace Tabel.View
             {
                 get; set;
             }
-            public int itogdays
-            {
-                get; set;
-            }
-            public int itoghours
-            {
-                get; set;
-            }
-
-        //    public int CountOccurrencesOfLetterYa(Employee item)
-        //    {
-        //        int count = 0;
-
-        //        using (var context = new ApplicationContext())
-        //        {
-        //            var employeeTable = context.EmployeeTabels.ToList();
-
-        //            foreach (var employee in employeeTable)
-        //            {
-
-        //                count += CountOccurrencesInString(employee.Data1, 'Я');
-        //                count += CountOccurrencesInString(employee.Data1, 'я');
-        //                count += CountOccurrencesInString(employee.Data2, 'Я');
-        //                count += CountOccurrencesInString(employee.Data2, 'я');
-        //                count += CountOccurrencesInString(employee.Data3, 'Я');
-        //                count += CountOccurrencesInString(employee.Data3, 'я');
-        //                count += CountOccurrencesInString(employee.Data4, 'Я');
-        //                count += CountOccurrencesInString(employee.Data4, 'я');
-        //                count += CountOccurrencesInString(employee.Data5, 'Я');
-        //                count += CountOccurrencesInString(employee.Data5, 'я');
-        //                count += CountOccurrencesInString(employee.Data6, 'Я');
-        //                count += CountOccurrencesInString(employee.Data6, 'Я');
-        //                count += CountOccurrencesInString(employee.Data7, 'Я');
-        //                count += CountOccurrencesInString(employee.Data7, 'я');
-        //                count += CountOccurrencesInString(employee.Data8, 'Я');
-        //                count += CountOccurrencesInString(employee.Data8, 'я');
-        //                count += CountOccurrencesInString(employee.Data9, 'Я');
-        //                count += CountOccurrencesInString(employee.Data9, 'я');
-        //                count += CountOccurrencesInString(employee.Data10, 'Я');
-        //                count += CountOccurrencesInString(employee.Data10, 'я');
-        //                count += CountOccurrencesInString(employee.Data11, 'Я');
-        //                count += CountOccurrencesInString(employee.Data11, 'я');
-        //                count += CountOccurrencesInString(employee.Data12, 'Я');
-        //                count += CountOccurrencesInString(employee.Data12, 'я');
-        //                count += CountOccurrencesInString(employee.Data13, 'Я');
-        //                count += CountOccurrencesInString(employee.Data13, 'я');
-        //                count += CountOccurrencesInString(employee.Data14, 'Я');
-        //                count += CountOccurrencesInString(employee.Data14, 'я');
-        //                count += CountOccurrencesInString(employee.Data15, 'Я');
-        //                count += CountOccurrencesInString(employee.Data15, 'я');
-        //                count += CountOccurrencesInString(employee.Data16, 'Я');
-        //                count += CountOccurrencesInString(employee.Data16, 'я');
-        //                count += CountOccurrencesInString(employee.Data17, 'Я');
-        //                count += CountOccurrencesInString(employee.Data17, 'я');
-        //                count += CountOccurrencesInString(employee.Data18, 'Я');
-        //                count += CountOccurrencesInString(employee.Data18, 'я');
-        //                count += CountOccurrencesInString(employee.Data19, 'Я');
-        //                count += CountOccurrencesInString(employee.Data19, 'я');
-        //                count += CountOccurrencesInString(employee.Data20, 'Я');
-        //                count += CountOccurrencesInString(employee.Data20, 'я');
-        //                count += CountOccurrencesInString(employee.Data21, 'Я');
-        //                count += CountOccurrencesInString(employee.Data21, 'я');
-        //                count += CountOccurrencesInString(employee.Data22, 'Я');
-        //                count += CountOccurrencesInString(employee.Data22, 'я');
-        //                count += CountOccurrencesInString(employee.Data23, 'Я');
-        //                count += CountOccurrencesInString(employee.Data23, 'я');
-        //                count += CountOccurrencesInString(employee.Data24, 'Я');
-        //                count += CountOccurrencesInString(employee.Data24, 'я');
-        //                count += CountOccurrencesInString(employee.Data25, 'Я');
-        //                count += CountOccurrencesInString(employee.Data25, 'я');
-        //                count += CountOccurrencesInString(employee.Data26, 'Я');
-        //                count += CountOccurrencesInString(employee.Data26, 'я');
-        //                count += CountOccurrencesInString(employee.Data27, 'Я');
-        //                count += CountOccurrencesInString(employee.Data27, 'я');
-        //                count += CountOccurrencesInString(employee.Data28, 'Я');
-        //                count += CountOccurrencesInString(employee.Data28, 'я');
-        //                count += CountOccurrencesInString(employee.Data29, 'Я');
-        //                count += CountOccurrencesInString(employee.Data29, 'я');
-        //                count += CountOccurrencesInString(employee.Data30, 'Я');
-        //                count += CountOccurrencesInString(employee.Data30, 'я');
-        //                count += CountOccurrencesInString(employee.Data31, 'Я');
-        //                count += CountOccurrencesInString(employee.Data31, 'я');
-
-        //            }
-        //        }
-
-        //        return count;
-        //    }
-
-        //    public int CountOccurrencesInString(string input, char letter)
-        //    {
-        //        if (string.IsNullOrEmpty(input))
-        //        {
-        //            return 0;
-        //        }
-
-        //        return input.Count(c => c == letter);
-        //    }
+           
         }
 
         
