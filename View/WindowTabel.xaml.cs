@@ -204,6 +204,7 @@ namespace Tabel.View
 
 
                     // Определяем ячейки для вставки формулы
+
                     var range = worksheet.Range("AH7");
                     var range2 = worksheet.Range("AH8");
                     var range3 = worksheet.Range("AH9");
@@ -214,81 +215,84 @@ namespace Tabel.View
                     var range8 = worksheet.Range("AH14");
 
                     // Вставляем формулу в указанный диапазон ячеек
-                    range.FormulaA1 = "=IF(LOWER(C7)=\"я\",1,0)+IF(LOWER(D7)=\"я\",1,0)+IF(LOWER(E7)=\"я\",1,0)+IF(LOWER(F7)=\"я\",1,0)" +
-                  "+IF(LOWER(G7)=\"я\",1,0)+IF(LOWER(H7)=\"я\",1,0)+IF(LOWER(I7)=\"я\",1,0)+IF(LOWER(J7)=\"я\",1,0)" +
-                  "+IF(LOWER(K7)=\"я\",1,0)+IF(LOWER(L7)=\"я\",1,0)+IF(LOWER(M7)=\"я\",1,0)+IF(LOWER(N7)=\"я\",1,0)" +
-                  "+IF(LOWER(O7)=\"я\",1,0)+IF(LOWER(P7)=\"я\",1,0)+IF(LOWER(Q7)=\"я\",1,0)+IF(LOWER(R7)=\"я\",1,0)" +
-                  "+IF(LOWER(S7)=\"я\",1,0)+IF(LOWER(T7)=\"я\",1,0)+IF(LOWER(U7)=\"я\",1,0)+IF(LOWER(V7)=\"я\",1,0)" +
-                  "+IF(LOWER(W7)=\"я\",1,0)+IF(LOWER(X7)=\"я\",1,0)+IF(LOWER(Y7)=\"я\",1,0)+IF(LOWER(Z7)=\"я\",1,0)" +
-                  "+IF(LOWER(AA7)=\"я\",1,0)+IF(LOWER(AB7)=\"я\",1,0)+IF(LOWER(AC7)=\"я\",1,0)+IF(LOWER(AD7)=\"я\",1,0)" +
-                  "+IF(LOWER(AE7)=\"я\",1,0)+IF(LOWER(AF7)=\"я\",1,0)+IF(LOWER(AG7)=\"я\",1,0)";
+                   
+                        range.FormulaA1 = "=IF(B7=\"\", \"\",IF(LOWER(C7)=\"я\",1,0)+IF(LOWER(D7)=\"я\",1,0)+IF(LOWER(E7)=\"я\",1,0)+IF(LOWER(F7)=\"я\",1,0)" +
+                                          "+IF(LOWER(G7)=\"я\",1,0)+IF(LOWER(H7)=\"я\",1,0)+IF(LOWER(I7)=\"я\",1,0)+IF(LOWER(J7)=\"я\",1,0)" +
+                                          "+IF(LOWER(K7)=\"я\",1,0)+IF(LOWER(L7)=\"я\",1,0)+IF(LOWER(M7)=\"я\",1,0)+IF(LOWER(N7)=\"я\",1,0)" +
+                                          "+IF(LOWER(O7)=\"я\",1,0)+IF(LOWER(P7)=\"я\",1,0)+IF(LOWER(Q7)=\"я\",1,0)+IF(LOWER(R7)=\"я\",1,0)" +
+                                          "+IF(LOWER(S7)=\"я\",1,0)+IF(LOWER(T7)=\"я\",1,0)+IF(LOWER(U7)=\"я\",1,0)+IF(LOWER(V7)=\"я\",1,0)" +
+                                          "+IF(LOWER(W7)=\"я\",1,0)+IF(LOWER(X7)=\"я\",1,0)+IF(LOWER(Y7)=\"я\",1,0)+IF(LOWER(Z7)=\"я\",1,0)" +
+                                          "+IF(LOWER(AA7)=\"я\",1,0)+IF(LOWER(AB7)=\"я\",1,0)+IF(LOWER(AC7)=\"я\",1,0)+IF(LOWER(AD7)=\"я\",1,0)" +
+                                          "+IF(LOWER(AE7)=\"я\",1,0)+IF(LOWER(AF7)=\"я\",1,0)+IF(LOWER(AG7)=\"я\",1,0))";
 
+                                                           
 
-                    range2.FormulaA1 = "=IF(LOWER(C8)=\"я\",1,0)+IF(LOWER(D8)=\"я\",1,0)+IF(LOWER(E8)=\"я\",1,0)+IF(LOWER(F8)=\"я\",1,0)" +
+                    range2.FormulaA1 = "=IF(B8=\"\", \"\",IF(LOWER(C8)=\"я\",1,0)+IF(LOWER(D8)=\"я\",1,0)+IF(LOWER(E8)=\"я\",1,0)+IF(LOWER(F8)=\"я\",1,0)" +
                     "+IF(LOWER(G8)=\"я\",1,0)+IF(LOWER(H8)=\"я\",1,0)+IF(LOWER(I8)=\"я\",1,0)+IF(LOWER(J8)=\"я\",1,0)" +
                     "+IF(LOWER(K8)=\"я\",1,0)+IF(LOWER(L8)=\"я\",1,0)+IF(LOWER(M8)=\"я\",1,0)+IF(LOWER(N8)=\"я\",1,0)" +
                     "+IF(LOWER(O8)=\"я\",1,0)+IF(LOWER(P8)=\"я\",1,0)+IF(LOWER(Q8)=\"я\",1,0)+IF(LOWER(R8)=\"я\",1,0)" +
                     "+IF(LOWER(S8)=\"я\",1,0)+IF(LOWER(T8)=\"я\",1,0)+IF(LOWER(U8)=\"я\",1,0)+IF(LOWER(V8)=\"я\",1,0)" +
                     "+IF(LOWER(W8)=\"я\",1,0)+IF(LOWER(X8)=\"я\",1,0)+IF(LOWER(Y8)=\"я\",1,0)+IF(LOWER(Z8)=\"я\",1,0)" +
                     "+IF(LOWER(AA8)=\"я\",1,0)+IF(LOWER(AB8)=\"я\",1,0)+IF(LOWER(AC8)=\"я\",1,0)+IF(LOWER(AD8)=\"я\",1,0)" +
-                    "+IF(LOWER(AE8)=\"я\",1,0)+IF(LOWER(AF8)=\"я\",1,0)+IF(LOWER(AG8)=\"я\",1,0)";
+                    "+IF(LOWER(AE8)=\"я\",1,0)+IF(LOWER(AF8)=\"я\",1,0)+IF(LOWER(AG8)=\"я\",1,0))";
 
 
-                    range3.FormulaA1 = "=IF(LOWER(C9)=\"я\",1,0)+IF(LOWER(D9)=\"я\",1,0)+IF(LOWER(E9)=\"я\",1,0)+IF(LOWER(F9)=\"я\",1,0)" +
+                    range3.FormulaA1 = "=IF(B9=\"\", \"\",IF(LOWER(C9)=\"я\",1,0)+IF(LOWER(D9)=\"я\",1,0)+IF(LOWER(E9)=\"я\",1,0)+IF(LOWER(F9)=\"я\",1,0)" +
                     "+IF(LOWER(G9)=\"я\",1,0)+IF(LOWER(H9)=\"я\",1,0)+IF(LOWER(I9)=\"я\",1,0)+IF(LOWER(J9)=\"я\",1,0)" +
                     "+IF(LOWER(K9)=\"я\",1,0)+IF(LOWER(L9)=\"я\",1,0)+IF(LOWER(M9)=\"я\",1,0)+IF(LOWER(N9)=\"я\",1,0)" +
                     "+IF(LOWER(O9)=\"я\",1,0)+IF(LOWER(P9)=\"я\",1,0)+IF(LOWER(Q9)=\"я\",1,0)+IF(LOWER(R9)=\"я\",1,0)" +
                     "+IF(LOWER(S9)=\"я\",1,0)+IF(LOWER(T9)=\"я\",1,0)+IF(LOWER(U9)=\"я\",1,0)+IF(LOWER(V9)=\"я\",1,0)" +
                     "+IF(LOWER(W9)=\"я\",1,0)+IF(LOWER(X9)=\"я\",1,0)+IF(LOWER(Y9)=\"я\",1,0)+IF(LOWER(Z9)=\"я\",1,0)" +
                     "+IF(LOWER(AA9)=\"я\",1,0)+IF(LOWER(AB9)=\"я\",1,0)+IF(LOWER(AC9)=\"я\",1,0)+IF(LOWER(AD9)=\"я\",1,0)" +
-                    "+IF(LOWER(AE9)=\"я\",1,0)+IF(LOWER(AF9)=\"я\",1,0)+IF(LOWER(AG9)=\"я\",1,0)";
+                    "+IF(LOWER(AE9)=\"я\",1,0)+IF(LOWER(AF9)=\"я\",1,0)+IF(LOWER(AG9)=\"я\",1,0))";
 
 
-                    range4.FormulaA1 = "=IF(LOWER(C10)=\"я\",1,0)+IF(LOWER(D10)=\"я\",1,0)+IF(LOWER(E10)=\"я\",1,0)+IF(LOWER(F10)=\"я\",1,0)" +
+                    range4.FormulaA1 = "=IF(B10=\"\", \"\",IF(LOWER(C10)=\"я\",1,0)+IF(LOWER(D10)=\"я\",1,0)+IF(LOWER(E10)=\"я\",1,0)+IF(LOWER(F10)=\"я\",1,0)" +
                     "+IF(LOWER(G10)=\"я\",1,0)+IF(LOWER(H10)=\"я\",1,0)+IF(LOWER(I10)=\"я\",1,0)+IF(LOWER(J10)=\"я\",1,0)" +
                     "+IF(LOWER(K10)=\"я\",1,0)+IF(LOWER(L10)=\"я\",1,0)+IF(LOWER(M10)=\"я\",1,0)+IF(LOWER(N10)=\"я\",1,0)" +
                     "+IF(LOWER(O10)=\"я\",1,0)+IF(LOWER(P10)=\"я\",1,0)+IF(LOWER(Q10)=\"я\",1,0)+IF(LOWER(R10)=\"я\",1,0)" +
                     "+IF(LOWER(S10)=\"я\",1,0)+IF(LOWER(T10)=\"я\",1,0)+IF(LOWER(U10)=\"я\",1,0)+IF(LOWER(V10)=\"я\",1,0)" +
                     "+IF(LOWER(W10)=\"я\",1,0)+IF(LOWER(X10)=\"я\",1,0)+IF(LOWER(Y10)=\"я\",1,0)+IF(LOWER(Z10)=\"я\",1,0)" +
                     "+IF(LOWER(AA10)=\"я\",1,0)+IF(LOWER(AB10)=\"я\",1,0)+IF(LOWER(AC10)=\"я\",1,0)+IF(LOWER(AD10)=\"я\",1,0)" +
-                    "+IF(LOWER(AE10)=\"я\",1,0)+IF(LOWER(AF10)=\"я\",1,0)+IF(LOWER(AG10)=\"я\",1,0)";
+                    "+IF(LOWER(AE10)=\"я\",1,0)+IF(LOWER(AF10)=\"я\",1,0)+IF(LOWER(AG10)=\"я\",1,0))";
 
-                    range5.FormulaA1 = "=IF(LOWER(C11)=\"я\",1,0)+IF(LOWER(D11)=\"я\",1,0)+IF(LOWER(E11)=\"я\",1,0)+IF(LOWER(F11)=\"я\",1,0)" +
+                    range5.FormulaA1 = "=IF(B11=\"\", \"\",IF(LOWER(C11)=\"я\",1,0)+IF(LOWER(D11)=\"я\",1,0)+IF(LOWER(E11)=\"я\",1,0)+IF(LOWER(F11)=\"я\",1,0)" +
                     "+IF(LOWER(G11)=\"я\",1,0)+IF(LOWER(H11)=\"я\",1,0)+IF(LOWER(I11)=\"я\",1,0)+IF(LOWER(J11)=\"я\",1,0)" +
                     "+IF(LOWER(K11)=\"я\",1,0)+IF(LOWER(L11)=\"я\",1,0)+IF(LOWER(M11)=\"я\",1,0)+IF(LOWER(N11)=\"я\",1,0)" +
                     "+IF(LOWER(O11)=\"я\",1,0)+IF(LOWER(P11)=\"я\",1,0)+IF(LOWER(Q11)=\"я\",1,0)+IF(LOWER(R11)=\"я\",1,0)" +
                     "+IF(LOWER(S11)=\"я\",1,0)+IF(LOWER(T11)=\"я\",1,0)+IF(LOWER(U11)=\"я\",1,0)+IF(LOWER(V11)=\"я\",1,0)" +
                     "+IF(LOWER(W11)=\"я\",1,0)+IF(LOWER(X11)=\"я\",1,0)+IF(LOWER(Y11)=\"я\",1,0)+IF(LOWER(Z11)=\"я\",1,0)" +
                     "+IF(LOWER(AA11)=\"я\",1,0)+IF(LOWER(AB11)=\"я\",1,0)+IF(LOWER(AC11)=\"я\",1,0)+IF(LOWER(AD11)=\"я\",1,0)" +
-                    "+IF(LOWER(AE11)=\"я\",1,0)+IF(LOWER(AF11)=\"я\",1,0)+IF(LOWER(AG11)=\"я\",1,0)";
+                    "+IF(LOWER(AE11)=\"я\",1,0)+IF(LOWER(AF11)=\"я\",1,0)+IF(LOWER(AG11)=\"я\",1,0))";
                     
-                    range6.FormulaA1 = "=IF(LOWER(C12)=\"я\",1,0)+IF(LOWER(D12)=\"я\",1,0)+IF(LOWER(E12)=\"я\",1,0)+IF(LOWER(F12)=\"я\",1,0)" +
+                    range6.FormulaA1 = "=IF(B12=\"\", \"\",IF(LOWER(C12)=\"я\",1,0)+IF(LOWER(D12)=\"я\",1,0)+IF(LOWER(E12)=\"я\",1,0)+IF(LOWER(F12)=\"я\",1,0)" +
                                         "+IF(LOWER(G12)=\"я\",1,0)+IF(LOWER(H12)=\"я\",1,0)+IF(LOWER(I12)=\"я\",1,0)+IF(LOWER(J12)=\"я\",1,0)" +
                                         "+IF(LOWER(K12)=\"я\",1,0)+IF(LOWER(L12)=\"я\",1,0)+IF(LOWER(M12)=\"я\",1,0)+IF(LOWER(N12)=\"я\",1,0)" +
                                         "+IF(LOWER(O12)=\"я\",1,0)+IF(LOWER(P12)=\"я\",1,0)+IF(LOWER(Q12)=\"я\",1,0)+IF(LOWER(R12)=\"я\",1,0)" +
                                         "+IF(LOWER(S12)=\"я\",1,0)+IF(LOWER(T12)=\"я\",1,0)+IF(LOWER(U12)=\"я\",1,0)+IF(LOWER(V12)=\"я\",1,0)" +
                                         "+IF(LOWER(W12)=\"я\",1,0)+IF(LOWER(X12)=\"я\",1,0)+IF(LOWER(Y12)=\"я\",1,0)+IF(LOWER(Z12)=\"я\",1,0)" +
                                         "+IF(LOWER(AA12)=\"я\",1,0)+IF(LOWER(AB12)=\"я\",1,0)+IF(LOWER(AC12)=\"я\",1,0)+IF(LOWER(AD12)=\"я\",1,0)" +
-                                        "+IF(LOWER(AE12)=\"я\",1,0)+IF(LOWER(AF12)=\"я\",1,0)+IF(LOWER(AG12)=\"я\",1,0)";
+                                        "+IF(LOWER(AE12)=\"я\",1,0)+IF(LOWER(AF12)=\"я\",1,0)+IF(LOWER(AG12)=\"я\",1,0))";
 
-                    range7.FormulaA1 = "=IF(LOWER(C13)=\"я\",1,0)+IF(LOWER(D13)=\"я\",1,0)+IF(LOWER(E13)=\"я\",1,0)+IF(LOWER(F13)=\"я\",1,0)" +
-                      "+IF(LOWER(G13)=\"я\",1,0)+IF(LOWER(H13)=\"я\",1,0)+IF(LOWER(I13)=\"я\",1,0)+IF(LOWER(J13)=\"я\",1,0)" +
-                      "+IF(LOWER(K13)=\"я\",1,0)+IF(LOWER(L13)=\"я\",1,0)+IF(LOWER(M13)=\"я\",1,0)+IF(LOWER(N13)=\"я\",1,0)" +
-                      "+IF(LOWER(O13)=\"я\",1,0)+IF(LOWER(P13)=\"я\",1,0)+IF(LOWER(Q13)=\"я\",1,0)+IF(LOWER(R13)=\"я\",1,0)" +
-                      "+IF(LOWER(S13)=\"я\",1,0)+IF(LOWER(T13)=\"я\",1,0)+IF(LOWER(U13)=\"я\",1,0)+IF(LOWER(V13)=\"я\",1,0)" +
-                      "+IF(LOWER(W13)=\"я\",1,0)+IF(LOWER(X13)=\"я\",1,0)+IF(LOWER(Y13)=\"я\",1,0)+IF(LOWER(Z13)=\"я\",1,0)" +
-                      "+IF(LOWER(AA13)=\"я\",1,0)+IF(LOWER(AB13)=\"я\",1,0)+IF(LOWER(AC13)=\"я\",1,0)+IF(LOWER(AD13)=\"я\",1,0)" +
-                      "+IF(LOWER(AE13)=\"я\",1,0)+IF(LOWER(AF13)=\"я\",1,0)+IF(LOWER(AG13)=\"я\",1,0)";
+                    range7.FormulaA1 = "=IF(B13=\"\", \"\",IF(LOWER(C13)=\"я\",1,0)+IF(LOWER(D13)=\"я\",1,0)+IF(LOWER(E13)=\"я\",1,0)+IF(LOWER(F13)=\"я\",1,0)" +
+                    "+IF(LOWER(G13)=\"я\",1,0)+IF(LOWER(H13)=\"я\",1,0)+IF(LOWER(I13)=\"я\",1,0)+IF(LOWER(J13)=\"я\",1,0)" +
+                    "+IF(LOWER(K13)=\"я\",1,0)+IF(LOWER(L13)=\"я\",1,0)+IF(LOWER(M13)=\"я\",1,0)+IF(LOWER(N13)=\"я\",1,0)" +
+                    "+IF(LOWER(O13)=\"я\",1,0)+IF(LOWER(P13)=\"я\",1,0)+IF(LOWER(Q13)=\"я\",1,0)+IF(LOWER(R13)=\"я\",1,0)" +
+                    "+IF(LOWER(S13)=\"я\",1,0)+IF(LOWER(T13)=\"я\",1,0)+IF(LOWER(U13)=\"я\",1,0)+IF(LOWER(V13)=\"я\",1,0)" +
+                    "+IF(LOWER(W13)=\"я\",1,0)+IF(LOWER(X13)=\"я\",1,0)+IF(LOWER(Y13)=\"я\",1,0)+IF(LOWER(Z13)=\"я\",1,0)" +
+                    "+IF(LOWER(AA13)=\"я\",1,0)+IF(LOWER(AB13)=\"я\",1,0)+IF(LOWER(AC13)=\"я\",1,0)+IF(LOWER(AD13)=\"я\",1,0)" +
+                    "+IF(LOWER(AE13)=\"я\",1,0)+IF(LOWER(AF13)=\"я\",1,0)+IF(LOWER(AG13)=\"я\",1,0))";
 
 
-                    range8.FormulaA1 = "=IF(LOWER(C14)=\"я\",1,0)+IF(LOWER(D14)=\"я\",1,0)+IF(LOWER(E14)=\"я\",1,0)+IF(LOWER(F14)=\"я\",1,0)" +
+
+                    range8.FormulaA1 = "=IF(B14=\"\", \"\",IF(LOWER(C14)=\"я\",1,0)+IF(LOWER(D14)=\"я\",1,0)+IF(LOWER(E14)=\"я\",1,0)+IF(LOWER(F14)=\"я\",1,0)" +
                     "+IF(LOWER(G14)=\"я\",1,0)+IF(LOWER(H14)=\"я\",1,0)+IF(LOWER(I14)=\"я\",1,0)+IF(LOWER(J14)=\"я\",1,0)" +
                     "+IF(LOWER(K14)=\"я\",1,0)+IF(LOWER(L14)=\"я\",1,0)+IF(LOWER(M14)=\"я\",1,0)+IF(LOWER(N14)=\"я\",1,0)" +
                     "+IF(LOWER(O14)=\"я\",1,0)+IF(LOWER(P14)=\"я\",1,0)+IF(LOWER(Q14)=\"я\",1,0)+IF(LOWER(R14)=\"я\",1,0)" +
                     "+IF(LOWER(S14)=\"я\",1,0)+IF(LOWER(T14)=\"я\",1,0)+IF(LOWER(U14)=\"я\",1,0)+IF(LOWER(V14)=\"я\",1,0)" +
                     "+IF(LOWER(W14)=\"я\",1,0)+IF(LOWER(X14)=\"я\",1,0)+IF(LOWER(Y14)=\"я\",1,0)+IF(LOWER(Z14)=\"я\",1,0)" +
                     "+IF(LOWER(AA14)=\"я\",1,0)+IF(LOWER(AB14)=\"я\",1,0)+IF(LOWER(AC14)=\"я\",1,0)+IF(LOWER(AD14)=\"я\",1,0)" +
-                    "+IF(LOWER(AE14)=\"я\",1,0)+IF(LOWER(AF14)=\"я\",1,0)+IF(LOWER(AG14)=\"я\",1,0)";
+                    "+IF(LOWER(AE14)=\"я\",1,0)+IF(LOWER(AF14)=\"я\",1,0)+IF(LOWER(AG14)=\"я\",1,0))";
 
 
 
@@ -303,14 +307,14 @@ namespace Tabel.View
                     var range15 = worksheet.Range("AI13");
                     var range16 = worksheet.Range("AI14");
                     // Вставляем формулу в указанный диапазон ячеек
-                    range9.FormulaA1 = "=AH7*$A$400";
-                    range10.FormulaA1 = "=AH8*$A$400";
-                    range11.FormulaA1 = "=AH9*$A$400";
-                    range12.FormulaA1 = "=AH10*$A$400";
-                    range13.FormulaA1 = "=AH11*$A$400";
-                    range14.FormulaA1 = "=AH12*$A$400";
-                    range15.FormulaA1 = "=AH13*$A$400";
-                    range16.FormulaA1 = "=AH14*$A$400";
+                    range9.FormulaA1 = "=IF(B7=\"\", \"\",AH7*$A$400)";
+                    range10.FormulaA1 = "=IF(B8=\"\", \"\",AH8*$A$400)";
+                    range11.FormulaA1 = "=IF(B9=\"\", \"\",AH9*$A$400)";
+                    range12.FormulaA1 = "=IF(B10=\"\", \"\",AH10*$A$400)";
+                    range13.FormulaA1 = "=IF(B11=\"\", \"\",AH11*$A$400)";
+                    range14.FormulaA1 = "=IF(B12=\"\", \"\",AH12*$A$400)";
+                    range15.FormulaA1 = "=IF(B13=\"\", \"\",AH13*$A$400)";
+                    range16.FormulaA1 = "=IF(B14=\"\", \"\",AH14*$A$400)";
 
 
 
