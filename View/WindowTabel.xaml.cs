@@ -21,6 +21,7 @@ using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace Tabel.View
 {
@@ -172,10 +173,20 @@ namespace Tabel.View
             DateTime date = datePicker.SelectedDate.Value;
             string divisionName = txtDivisionName.Text;
 
+
             using (var context = new ApplicationContext())
             {
                 var employees = context.EmployeeTabels.ToList();
                 var organizationName = context.Organizations.FirstOrDefault()?.NameOrganization; // Получаем название организации
+                int? dayTypeHours = context.DayTypes
+                 .Where(dt => dt.DayTypeName == "Явка")
+                 .Select(dt => dt.DayTypeHours)
+                 .FirstOrDefault();
+
+
+
+                //if (dayTypeHours != null)
+                //{
 
                 using (var workbook = new XLWorkbook())
                 {
@@ -183,9 +194,15 @@ namespace Tabel.View
                     worksheet.Cell("R4").SetValue($"Дата: {date:dd/MM/yyyy}");
                     worksheet.Cell("N2").SetValue($"Табель учёта использования рабочего времени № {timesheetNumber}");
                     worksheet.Cell("Q3").SetValue($"Подразделение: {divisionName}");
-                   worksheet.Cell("B2").SetValue($"Организация: {organizationName}");
-                   
+                    worksheet.Cell("B2").SetValue($"Организация: {organizationName}");
+
+
+                    worksheet.Cell("A400").Value = dayTypeHours;
+
+
                     worksheet.Cell("B15").SetValue($"Ответственное лицо");
+
+
                     // Определяем ячейки для вставки формулы
                     var range = worksheet.Range("AH7");
                     var range2 = worksheet.Range("AH8");
@@ -199,7 +216,7 @@ namespace Tabel.View
                     // Вставляем формулу в указанный диапазон ячеек
                     range.FormulaA1 = "=IF(C7=\"я\",1,0)+IF(D7=\"я\",1,0)+IF(E7=\"я\",1,0)+IF(F7=\"я\",1,0)" +
                         "+IF(G7=\"я\",1,0)+IF(H7=\"я\",1,0)+IF(I7=\"я\",1,0)+IF(J7=\"я\",1,0)+IF(K7=\"я\",1,0)+IF(L7=\"я\",1,0)+IF(M7=\"я\",1,0)+IF(N7=\"я\",1,0)" +
-                        "+IF(G7=\"я\",1,0)+IF(O7=\"я\",1,0)+IF(P7=\"я\",1,0)+IF(Q7=\"я\",1,0)+IF(R7=\"я\",1,0)" +
+                        "+IF(O7=\"я\",1,0)+IF(P7=\"я\",1,0)+IF(Q7=\"я\",1,0)+IF(R7=\"я\",1,0)" +
                         "+IF(S7=\"я\",1,0)+IF(T7=\"я\",1,0)+IF(U7=\"я\",1,0)+IF(V7=\"я\",1,0)+IF(W7=\"я\",1,0)+IF(X7=\"я\",1,0)" +
                         "+IF(Y7=\"я\",1,0)+IF(Z7=\"я\",1,0)+IF(AA7=\"я\",1,0)+IF(AB7=\"я\",1,0)+IF(AC7=\"я\",1,0)+IF(AD7=\"я\",1,0)+IF(AE7=\"я\",1,0)+IF(AF7=\"я\",1,0)+IF(AG7=\"я\",1,0)";
 
@@ -210,42 +227,64 @@ namespace Tabel.View
                                            "+IF(Y8=\"я\",1,0)+IF(Z8=\"я\",1,0)+IF(AA8=\"я\",1,0)+IF(AB8=\"я\",1,0)+IF(AC8=\"я\",1,0)+IF(AD8=\"я\",1,0)+IF(AE8=\"я\",1,0)+IF(AF8=\"я\",1,0)+IF(AG8=\"я\",1,0)";
                     range3.FormulaA1 = "=IF(C9=\"я\",1,0)+IF(D9=\"я\",1,0)+IF(E9=\"я\",1,0)+IF(F9=\"я\",1,0)" +
                        "+IF(G9=\"я\",1,0)+IF(H9=\"я\",1,0)+IF(I9=\"я\",1,0)+IF(J9=\"я\",1,0)+IF(K9=\"я\",1,0)+IF(L9=\"я\",1,0)+IF(M9=\"я\",1,0)+IF(N9=\"я\",1,0)" +
-                       "+IF(G9=\"я\",1,0)+IF(O9=\"я\",1,0)+IF(P9=\"я\",1,0)+IF(Q9=\"я\",1,0)+IF(R9=\"я\",1,0)" +
+                       "+IF(O9=\"я\",1,0)+IF(P9=\"я\",1,0)+IF(Q9=\"я\",1,0)+IF(R9=\"я\",1,0)" +
                        "+IF(S9=\"я\",1,0)+IF(T9=\"я\",1,0)+IF(U9=\"я\",1,0)+IF(V9=\"я\",1,0)+IF(W9=\"я\",1,0)+IF(X9=\"я\",1,0)" +
                        "+IF(Y9=\"я\",1,0)+IF(Z9=\"я\",1,0)+IF(AA9=\"я\",1,0)+IF(AB9=\"я\",1,0)+IF(AC9=\"я\",1,0)+IF(AD9=\"я\",1,0)+IF(AE9=\"я\",1,0)+IF(AF9=\"я\",1,0)+IF(AG9=\"я\",1,0)";
 
                     range4.FormulaA1 = "=IF(C10=\"я\",1,0)+IF(D10=\"я\",1,0)+IF(E10=\"я\",1,0)+IF(F10=\"я\",1,0)" +
                                            "+IF(G10=\"я\",1,0)+IF(H10=\"я\",1,0)+IF(I10=\"я\",1,0)+IF(J10=\"я\",1,0)+IF(K10=\"я\",1,0)+IF(L10=\"я\",1,0)+IF(M10=\"я\",1,0)+IF(N10=\"я\",1,0)" +
-                                           "+IF(G10=\"я\",1,0)+IF(O10=\"я\",1,0)+IF(P10=\"я\",1,0)+IF(Q10=\"я\",1,0)+IF(R10=\"я\",1,0)" +
+                                           "+IF(O10=\"я\",1,0)+IF(P10=\"я\",1,0)+IF(Q10=\"я\",1,0)+IF(R10=\"я\",1,0)" +
                                            "+IF(S10=\"я\",1,0)+IF(T10=\"я\",1,0)+IF(U10=\"я\",1,0)+IF(V10=\"я\",1,0)+IF(W10=\"я\",1,0)+IF(X10=\"я\",1,0)" +
                                            "+IF(Y10=\"я\",1,0)+IF(Z10=\"я\",1,0)+IF(AA10=\"я\",1,0)+IF(AB10=\"я\",1,0)+IF(AC10=\"я\",1,0)+IF(AD10=\"я\",1,0)+IF(AE10=\"я\",1,0)+IF(AF10=\"я\",1,0)+IF(AG10=\"я\",1,0)";
                     range5.FormulaA1 = "=IF(C11=\"я\",1,0)+IF(D11=\"я\",1,0)+IF(E11=\"я\",1,0)+IF(F11=\"я\",1,0)" +
                         "+IF(G11=\"я\",1,0)+IF(H11=\"я\",1,0)+IF(I11=\"я\",1,0)+IF(J11=\"я\",1,0)+IF(K11=\"я\",1,0)+IF(L11=\"я\",1,0)+IF(M11=\"я\",1,0)+IF(N11=\"я\",1,0)" +
-                        "+IF(G11=\"я\",1,0)+IF(O11=\"я\",1,0)+IF(P11=\"я\",1,0)+IF(Q11=\"я\",1,0)+IF(R11=\"я\",1,0)" +
+                        "+IF(O11=\"я\",1,0)+IF(P11=\"я\",1,0)+IF(Q11=\"я\",1,0)+IF(R11=\"я\",1,0)" +
                         "+IF(S11=\"я\",1,0)+IF(T11=\"я\",1,0)+IF(U11=\"я\",1,0)+IF(V11=\"я\",1,0)+IF(W11=\"я\",1,0)+IF(X11=\"я\",1,0)" +
                         "+IF(Y11=\"я\",1,0)+IF(Z11=\"я\",1,0)+IF(AA11=\"я\",1,0)+IF(AB11=\"я\",1,0)+IF(AC11=\"я\",1,0)+IF(AD11=\"я\",1,0)+IF(AE11=\"я\",1,0)+IF(AF11=\"я\",1,0)+IF(AG11=\"я\",1,0)";
 
                     range8.FormulaA1 = "=IF(C14=\"я\",1,0)+IF(D14=\"я\",1,0)+IF(E14=\"я\",1,0)+IF(F14=\"я\",1,0)" +
                                            "+IF(G14=\"я\",1,0)+IF(H14=\"я\",1,0)+IF(I14=\"я\",1,0)+IF(J14=\"я\",1,0)+IF(K14=\"я\",1,0)+IF(L14=\"я\",1,0)+IF(M14=\"я\",1,0)+IF(N14=\"я\",1,0)" +
-                                           "+IF(G14=\"я\",1,0)+IF(O14=\"я\",1,0)+IF(P14=\"я\",1,0)+IF(Q14=\"я\",1,0)+IF(R14=\"я\",1,0)" +
+                                           "+IF(O14=\"я\",1,0)+IF(P14=\"я\",1,0)+IF(Q14=\"я\",1,0)+IF(R14=\"я\",1,0)" +
                                            "+IF(S14=\"я\",1,0)+IF(T14=\"я\",1,0)+IF(U14=\"я\",1,0)+IF(V14=\"я\",1,0)+IF(W14=\"я\",1,0)+IF(X14=\"я\",1,0)" +
                                            "+IF(Y14=\"я\",1,0)+IF(Z14=\"я\",1,0)+IF(AA14=\"я\",1,0)+IF(AB14=\"я\",1,0)+IF(AC14=\"я\",1,0)+IF(AD14=\"я\",1,0)+IF(AE14=\"я\",1,0)+IF(AF14=\"я\",1,0)+IF(AG14=\"я\",1,0)";
                     range6.FormulaA1 = "=IF(C12=\"я\",1,0)+IF(D12=\"я\",1,0)+IF(E12=\"я\",1,0)+IF(F12=\"я\",1,0)" +
                        "+IF(G12=\"я\",1,0)+IF(H12=\"я\",1,0)+IF(I12=\"я\",1,0)+IF(J12=\"я\",1,0)+IF(K12=\"я\",1,0)+IF(L12=\"я\",1,0)+IF(M12=\"я\",1,0)+IF(N12=\"я\",1,0)" +
-                       "+IF(G12=\"я\",1,0)+IF(O12=\"я\",1,0)+IF(P12=\"я\",1,0)+IF(Q12=\"я\",1,0)+IF(R12=\"я\",1,0)" +
+                       "++IF(O12=\"я\",1,0)+IF(P12=\"я\",1,0)+IF(Q12=\"я\",1,0)+IF(R12=\"я\",1,0)" +
                        "+IF(S12=\"я\",1,0)+IF(T12=\"я\",1,0)+IF(U12=\"я\",1,0)+IF(V12=\"я\",1,0)+IF(W12=\"я\",1,0)+IF(X12=\"я\",1,0)" +
                        "+IF(Y12=\"я\",1,0)+IF(Z12=\"я\",1,0)+IF(AA12=\"я\",1,0)+IF(AB12=\"я\",1,0)+IF(AC12=\"я\",1,0)+IF(AD12=\"я\",1,0)+IF(AE12=\"я\",1,0)+IF(AF12=\"я\",1,0)+IF(AG12=\"я\",1,0)";
 
                     range7.FormulaA1 = "=IF(C13=\"я\",1,0)+IF(D13=\"я\",1,0)+IF(E13=\"я\",1,0)+IF(F13=\"я\",1,0)" +
                                            "+IF(G13=\"я\",1,0)+IF(H13=\"я\",1,0)+IF(I13=\"я\",1,0)+IF(J13=\"я\",1,0)+IF(K13=\"я\",1,0)+IF(L13=\"я\",1,0)+IF(M13=\"я\",1,0)+IF(N13=\"я\",1,0)" +
-                                           "+IF(G13=\"я\",1,0)+IF(O13=\"я\",1,0)+IF(P13=\"я\",1,0)+IF(Q13=\"я\",1,0)+IF(R13=\"я\",1,0)" +
+                                           "+IF(O13=\"я\",1,0)+IF(P13=\"я\",1,0)+IF(Q13=\"я\",1,0)+IF(R13=\"я\",1,0)" +
                                            "+IF(S13=\"я\",1,0)+IF(T13=\"я\",1,0)+IF(U13=\"я\",1,0)+IF(V13=\"я\",1,0)+IF(W13=\"я\",1,0)+IF(X13=\"я\",1,0)" +
                                            "+IF(Y13=\"я\",1,0)+IF(Z13=\"я\",1,0)+IF(AA13=\"я\",1,0)+IF(AB13=\"я\",1,0)+IF(AC13=\"я\",1,0)+IF(AD13=\"я\",1,0)+IF(AE13=\"я\",1,0)+IF(AF13=\"я\",1,0)+IF(AG13=\"я\",1,0)";
 
 
+
+                    // Определяем ячейки для вставки формулы
+                    var range9 = worksheet.Range("AI7");
+                    var range10 = worksheet.Range("AI8");
+                    var range11 = worksheet.Range("AI9");
+                    var range12 = worksheet.Range("AI10");
+                    var range13 = worksheet.Range("AI11");
+                    var range14 = worksheet.Range("AI12");
+                    var range15 = worksheet.Range("AI13");
+                    var range16 = worksheet.Range("AI14");
+                    // Вставляем формулу в указанный диапазон ячеек
+                    range9.FormulaA1 = "=AH7*$A$400";
+                    range10.FormulaA1 = "=AH8*$A$400";
+                    range11.FormulaA1 = "=AH9*$A$400";
+                    range12.FormulaA1 = "=AH10*$A$400";
+                    range13.FormulaA1 = "=AH11*$A$400";
+                    range14.FormulaA1 = "=AH12*$A$400";
+                    range15.FormulaA1 = "=AH13*$A$400";
+                    range16.FormulaA1 = "=AH14*$A$400";
+
+
+
                     // Заголовки столбцов
                     var columns = new List<string> { "№п/п", "ФИО", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-                        "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", 
+                        "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
                         "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "Итого дней", "Итого отработано часов" };
                     for (int i = 0; i < columns.Count; i++)
                     {
@@ -263,8 +302,8 @@ namespace Tabel.View
                         for (int i = 3; i <= 33; i++)
                         {
                             var dataValue = emp.GetType().GetProperty($"Data{i - 2}").GetValue(emp);
-                            worksheet.Cell(row, i).Value = dataValue != null ? dataValue.ToString() : ""; 
-                            worksheet.Column(i).Width = 2; 
+                            worksheet.Cell(row, i).Value = dataValue != null ? dataValue.ToString() : "";
+                            worksheet.Column(i).Width = 2;
                         }
                         row++;
                     }
@@ -279,6 +318,7 @@ namespace Tabel.View
                         UseShellExecute = true
                     });
                 }
+            //}
             }
         }
 
