@@ -150,8 +150,7 @@ namespace Tabel.View
                        
 
                     };
-                    //// Присвоение значения itogdays перед сохранением
-                    //employee.itogdays = item.CountOccurrencesOfLetterYa(item);
+                
 
                     context.EmployeeTabels.Add(employee);
 
@@ -172,6 +171,13 @@ namespace Tabel.View
             string timesheetNumber = txtTimesheetNumber.Text;
             DateTime date = datePicker.SelectedDate.Value;
             string divisionName = txtDivisionName.Text;
+            // Проверка, что "Номер табеля" не является отрицательным числом
+            if (int.Parse(timesheetNumber) < 0)
+            {
+                // Вывод сообщения о том, что "Номер табеля" должен быть положительным числом
+                MessageBox.Show("Номер табеля должен быть положительным числом.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
 
             using (var context = new ApplicationContext())
@@ -185,9 +191,7 @@ namespace Tabel.View
 
 
 
-                //if (dayTypeHours != null)
-                //{
-
+              
                 using (var workbook = new XLWorkbook())
                 {
                     var worksheet = workbook.Worksheets.Add("Employee Data");
@@ -354,7 +358,7 @@ namespace Tabel.View
                         UseShellExecute = true
                     });
                 }
-            //}
+           
             }
         }
 

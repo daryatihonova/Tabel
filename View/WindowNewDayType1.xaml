@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tabel.View"
         mc:Ignorable="d"
-        Title="WindowNewDayType1" Height="200" Width="400">
+        Title="WindowNewDayType1" Height="250" Width="400">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="8" />

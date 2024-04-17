@@ -54,7 +54,7 @@ namespace Tabel.View
                 }
                 else
                 {
-                    MessageBox.Show("DivisionName не может быть пустым.");
+                    MessageBox.Show("Все поля должны быть заполнены.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }

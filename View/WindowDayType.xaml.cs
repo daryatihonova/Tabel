@@ -38,30 +38,42 @@ namespace Tabel.View
             DataContext = db.DayTypes.Local.ToObservableCollection();
         }
         // добавление
+        // Проверка ввода отрицательного числа в поле DayTypeHours при добавлении типа дня
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             WindowNewDayType1 WindowNewDayType1 = new WindowNewDayType1(new DayType());
             if (WindowNewDayType1.ShowDialog() == true)
             {
                 DayType DayType = WindowNewDayType1.DayType;
+
+                // Проверка, что все обязательные поля заполнены
                 if (!string.IsNullOrEmpty(DayType.DayTypeName))
                 {
+                    // Проверка, что количество отработанных часов не является отрицательным
+                    if (DayType.DayTypeHours < 0)
+                    {
+                        // Вывод сообщения о том, что количество отработанных часов должно быть положительным числом
+                        MessageBox.Show("Количество отработанных часов должно быть положительным числом.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
                     db.DayTypes.Add(DayType);
                     db.SaveChanges();
                 }
                 else
                 {
-                    MessageBox.Show("DayTypeName не может быть пустым.");
+                    // Вывод сообщения о том, что все поля должны быть заполнены
+                    MessageBox.Show("Все поля должны быть заполнены.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
 
-        // редактирование
+        // Редактирование типа дня
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            // получаем выделенный объект
+            // Получаем выделенный объект
             DayType? daytype = daytypeList.SelectedItem as DayType;
-            // если ни одного объекта не выделено, выходим
+            // Если ни одного объекта не выделено, выходим
             if (daytype is null) return;
 
             WindowNewDayType1 WindowNewDayType1 = new WindowNewDayType1(new DayType
@@ -69,16 +81,23 @@ namespace Tabel.View
                 DayTypeID = daytype.DayTypeID,
                 DayTypeName = daytype.DayTypeName,
                 DayTypeShortName = daytype.DayTypeShortName,
-                DayTypeHours = daytype.DayTypeHours,
-
+                DayTypeHours = daytype.DayTypeHours
             });
 
             if (WindowNewDayType1.ShowDialog() == true)
             {
-                // получаем измененный объект
+                // Получаем измененный объект
                 daytype = db.DayTypes.Find(WindowNewDayType1.DayType.DayTypeID);
                 if (daytype != null)
                 {
+                    // Проверка, что количество отработанных часов не является отрицательным
+                    if (WindowNewDayType1.DayType.DayTypeHours < 0)
+                    {
+                        // Вывод сообщения о том, что количество отработанных часов должно быть положительным числом
+                        MessageBox.Show("Количество отработанных часов должно быть положительным числом.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
                     daytype.DayTypeID = WindowNewDayType1.DayType.DayTypeID;
                     daytype.DayTypeName = WindowNewDayType1.DayType.DayTypeName;
                     daytype.DayTypeShortName = WindowNewDayType1.DayType.DayTypeShortName;
@@ -88,6 +107,7 @@ namespace Tabel.View
                 }
             }
         }
+
 
         // удаление
         private void Delete_Click(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tabel.View"
         mc:Ignorable="d"
-        Title="WindowNewOrganization1" Height="800" Width="500">
+        Title="WindowNewOrganization1" Height="720" Width="500">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="8" />

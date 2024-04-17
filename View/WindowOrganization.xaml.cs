@@ -47,8 +47,15 @@ namespace Tabel.View
             if (WindowNewOrganization1.ShowDialog() == true)
             {
                 Organization Organization = WindowNewOrganization1.Organization;
-                db.Organizations.Add(Organization);
+                if (!string.IsNullOrEmpty(Organization.NameOrganization))
+                {
+                    db.Organizations.Add(Organization);
                 db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Все поля должны быть заполнены.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
         // редактирование
